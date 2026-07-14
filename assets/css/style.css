@@ -1,0 +1,192 @@
+/**
+ * ============================================
+ * Smile Business OS - Master Stylesheet
+ * Enterprise SaaS Platform
+ * Smile Financial Solution
+ * ============================================
+ * 
+ * This is the master stylesheet that imports
+ * all modular CSS files in the correct order.
+ * 
+ * DO NOT write component styles here.
+ * Use @import statements only.
+ * ============================================
+ */
+
+/* ============================================
+   1. CORE & FOUNDATION
+   ============================================ */
+
+/**
+ * 1.1 - Variables
+ * Contains all CSS custom properties (tokens)
+ * for theming, spacing, colors, typography, etc.
+ */
+@import 'variables.css';
+
+/**
+ * 1.2 - Reset
+ * Cross-browser reset and normalization.
+ * Removes default margins, paddings, and ensures
+ * consistent box-sizing.
+ */
+@import 'reset.css';
+
+/**
+ * 1.3 - Typography
+ * Font families, sizes, weights, line-heights,
+ * and text styles for the entire application.
+ */
+@import 'typography.css';
+
+
+/* ============================================
+   2. LAYOUT & STRUCTURE
+   ============================================ */
+
+/**
+ * 2.1 - Layout
+ * Grid system, container, sections,
+ * and structural layout patterns.
+ */
+@import 'layout.css';
+
+/**
+ * 2.2 - Header
+ * Sticky header styles including logo,
+ * navigation toggles, and header actions.
+ */
+@import 'header.css';
+
+/**
+ * 2.3 - Navigation
+ * Mega menu, bottom navigation, and
+ * all navigation-related components.
+ */
+@import 'navigation.css';
+
+
+/* ============================================
+   3. PAGE SECTIONS
+   ============================================ */
+
+/**
+ * 3.1 - Hero
+ * Hero section styles including banners,
+ * CTAs, and hero visual elements.
+ */
+@import 'hero.css';
+
+/**
+ * 3.2 - Offers
+ * Offer sliders, banners, and promotional
+ * content sections.
+ */
+@import 'offers.css';
+
+
+/* ============================================
+   4. COMPONENTS
+   ============================================ */
+
+/**
+ * 4.1 - Cards
+ * Card components for services, testimonials,
+ * membership plans, and content display.
+ */
+@import 'cards.css';
+
+/**
+ * 4.2 - Buttons
+ * Button styles including primary, secondary,
+ * and all button variants.
+ */
+@import 'buttons.css';
+
+/**
+ * 4.3 - Forms
+ * Form elements: inputs, selects, textareas,
+ * labels, validation, and form layouts.
+ */
+@import 'forms.css';
+
+
+/* ============================================
+   5. DASHBOARD & APPLICATION UI
+   ============================================ */
+
+/**
+ * 5.1 - Dashboard
+ * Dashboard-specific styles including widgets,
+ * statistics, charts, and data displays.
+ */
+@import 'dashboard.css';
+
+
+/* ============================================
+   6. FOOTER
+   ============================================ */
+
+/**
+ * 6.1 - Footer
+ * Global footer styles including sitemap,
+ * social links, and legal information.
+ */
+@import 'footer.css';
+
+
+/* ============================================
+   7. INTERACTIONS & MOTION
+   ============================================ */
+
+/**
+ * 7.1 - Animations
+ * Keyframes, transitions, animations,
+ * and motion design patterns.
+ */
+@import 'animations.css';
+
+
+/* ============================================
+   8. RESPONSIVE
+   ============================================ */
+
+/**
+ * 8.1 - Responsive
+ * Media queries, breakpoints, and
+ * responsive adjustments for all devices.
+ */
+@import 'responsive.css';
+
+
+/* ============================================
+   9. UTILITIES
+   ============================================ */
+
+/**
+ * 9.1 - Utilities
+ * Helper classes, spacing utilities,
+ * visibility, and other utility styles.
+ */
+@import 'utilities.css';
+
+
+/* ============================================
+   END OF MASTER STYLESHEET
+   ============================================
+ * 
+ * All CSS is organized in a modular, maintainable,
+ * and scalable architecture following ITCSS
+ * (Inverted Triangle CSS) methodology.
+ * 
+ * The import order ensures proper cascade:
+ * - Settings (Variables)
+ * - Tools (Mixins/Functions) - if needed
+ * - Reset & Base
+ * - Objects (Layout)
+ * - Components
+ * - Sections
+ * - Utilities
+ * 
+ * ============================================
+ */
