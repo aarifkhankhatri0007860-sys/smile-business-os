@@ -3,30 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <meta name="theme-color" content="#0A0A1A">
-    <meta name="description" content="Smile Business OS - India's Biggest AI-Powered Business Growth Platform. End-to-end business solutions including loans, consultancy, digital services, and AI automation.">
-    <meta name="keywords" content="business loan, personal loan, home loan, MSME, government schemes, startup consultancy, GST, ITR, trademark, business registration, digital marketing, AI automation, CRM, franchise, India">
+    <meta name="theme-color" content="#0A0A1A" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)">
+
+    <!-- Primary Meta Tags -->
+    <title>Smile Business OS - India's AI-Powered Business Super App</title>
+    <meta name="description" content="India's biggest AI-powered business growth platform. Get business loans, government schemes, GST, ITR, digital marketing, AI automation & more. Trusted by 10,000+ businesses.">
+    <meta name="keywords" content="business loan, personal loan, home loan, MSME, government schemes, GST, ITR, trademark, digital marketing, website development, CRM, AI automation, franchise, agent, India">
     <meta name="author" content="Smile Financial Solution">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Smile Business OS - AI-Powered Business Growth Platform">
-    <meta property="og:description" content="End-to-end business solutions for Indian businesses. Loans, consultancy, digital services, and AI automation.">
+    <link rel="canonical" href="https://smilebusinessos.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Smile Business OS - India's AI-Powered Business Super App">
+    <meta property="og:description" content="End-to-end business solutions powered by AI. Loans, consultancy, digital marketing & more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://smilebusinessos.com">
     <meta property="og:image" content="https://smilebusinessos.com/og-image.jpg">
+    <meta property="og:site_name" content="Smile Business OS">
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Smile Business OS - AI-Powered Business Growth Platform">
+    <meta name="twitter:title" content="Smile Business OS - India's AI-Powered Business Super App">
     <meta name="twitter:description" content="End-to-end business solutions powered by AI for Indian businesses.">
-    <link rel="canonical" href="https://smilebusinessos.com">
+    <meta name="twitter:image" content="https://smilebusinessos.com/twitter-image.jpg">
+
+    <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Smile Financial Solution",
+            "url": "https://smilebusinessos.com",
+            "logo": "https://smilebusinessos.com/logo.png",
+            "description": "India's biggest AI-powered business growth platform",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sector 56",
+                "addressLocality": "Gurugram",
+                "addressRegion": "Haryana",
+                "addressCountry": "India"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-98765-43210",
+                "contactType": "customer service"
+            },
+            "sameAs": [
+                "https://facebook.com/smilefinancialsolution",
+                "https://instagram.com/smilefinancialsolution",
+                "https://linkedin.com/company/smilefinancialsolution",
+                "https://youtube.com/@smilefinancialsolution"
+            ]
+        }
+    </script>
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Smile Business OS - AI-Powered Business Growth Platform</title>
 </head>
 <body>
 
     <!-- ===== LOADING SCREEN ===== -->
-    <div id="loader" role="status" aria-label="Loading application">
+    <div id="loader" class="loader" role="status" aria-label="Loading application">
         <div class="loader-spinner" aria-hidden="true"></div>
         <div class="loader-text" aria-hidden="true">SMILE BUSINESS OS</div>
     </div>
@@ -36,6 +78,8 @@
         <div class="container header-inner">
             <div class="header-left">
                 <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-icon" aria-hidden="true"></span>
+                    <span class="hamburger-icon" aria-hidden="true"></span>
                     <span class="hamburger-icon" aria-hidden="true"></span>
                 </button>
                 <a href="#hero" class="logo" aria-label="Smile Business OS Home">
@@ -62,49 +106,51 @@
             <div class="container mega-menu-inner">
                 <div class="mega-menu-grid">
                     <div class="mega-column">
-                        <h4 class="mega-title">Financial Solutions</h4>
+                        <h4 class="mega-title">Loans &amp; Finance</h4>
                         <ul class="mega-list">
-                            <li><a href="#" id="navBusinessLoan">Business Loan</a></li>
-                            <li><a href="#" id="navPersonalLoan">Personal Loan</a></li>
-                            <li><a href="#" id="navHomeLoan">Home Loan</a></li>
-                            <li><a href="#" id="navMSME">MSME Support</a></li>
-                            <li><a href="#" id="navGovtSchemes">Government Schemes</a></li>
+                            <li><a href="#" id="navBusinessLoan" class="mega-link">Business Loans</a></li>
+                            <li><a href="#" id="navPersonalLoan" class="mega-link">Personal Loans</a></li>
+                            <li><a href="#" id="navHomeLoan" class="mega-link">Home Loans</a></li>
+                            <li><a href="#" id="navMSME" class="mega-link">MSME Support</a></li>
+                            <li><a href="#" id="navInsurance" class="mega-link">Insurance</a></li>
+                            <li><a href="#" id="navCreditCards" class="mega-link">Credit Cards</a></li>
                         </ul>
                     </div>
                     <div class="mega-column">
-                        <h4 class="mega-title">Consultancy</h4>
+                        <h4 class="mega-title">Government &amp; Legal</h4>
                         <ul class="mega-list">
-                            <li><a href="#" id="navStartup">Startup Consultancy</a></li>
-                            <li><a href="#" id="navGST">GST &amp; ITR</a></li>
-                            <li><a href="#" id="navTrademark">Trademark &amp; Registration</a></li>
-                            <li><a href="#" id="navBusinessReg">Business Registration</a></li>
+                            <li><a href="#" id="navGovtSchemes" class="mega-link">Government Schemes</a></li>
+                            <li><a href="#" id="navBusinessReg" class="mega-link">Business Registration</a></li>
+                            <li><a href="#" id="navGST" class="mega-link">GST Registration</a></li>
+                            <li><a href="#" id="navITR" class="mega-link">Income Tax (ITR)</a></li>
+                            <li><a href="#" id="navTrademark" class="mega-link">Trademark Filing</a></li>
                         </ul>
                     </div>
                     <div class="mega-column">
                         <h4 class="mega-title">Digital Services</h4>
                         <ul class="mega-list">
-                            <li><a href="#" id="navDigitalMarketing">Digital Marketing</a></li>
-                            <li><a href="#" id="navWebDev">Website Development</a></li>
-                            <li><a href="#" id="navAppDev">App Development</a></li>
-                            <li><a href="#" id="navCRM">CRM Development</a></li>
-                            <li><a href="#" id="navAIAutomation">AI Automation</a></li>
+                            <li><a href="#" id="navDigitalMarketing" class="mega-link">Digital Marketing</a></li>
+                            <li><a href="#" id="navWebDev" class="mega-link">Website Development</a></li>
+                            <li><a href="#" id="navAppDev" class="mega-link">Mobile App Development</a></li>
+                            <li><a href="#" id="navCRM" class="mega-link">CRM Solutions</a></li>
+                            <li><a href="#" id="navAIAutomation" class="mega-link">AI Automation</a></li>
                         </ul>
                     </div>
                     <div class="mega-column">
                         <h4 class="mega-title">Business Growth</h4>
                         <ul class="mega-list">
-                            <li><a href="#" id="navAgent">Become Agent</a></li>
-                            <li><a href="#" id="navFranchise">Franchise</a></li>
-                            <li><a href="#" id="navMembership">Membership Plans</a></li>
-                            <li><a href="#" id="navTraining">Training Portal</a></li>
+                            <li><a href="#" id="navAgent" class="mega-link">Become Agent</a></li>
+                            <li><a href="#" id="navFranchise" class="mega-link">Franchise Opportunity</a></li>
+                            <li><a href="#" id="navMembership" class="mega-link">Membership Plans</a></li>
+                            <li><a href="#" id="navTraining" class="mega-link">Training Portal</a></li>
                         </ul>
                     </div>
                     <div class="mega-column">
                         <h4 class="mega-title">Resources</h4>
                         <ul class="mega-list">
-                            <li><a href="#" id="navBlogs">Blogs</a></li>
-                            <li><a href="#" id="navSupport">Support</a></li>
-                            <li><a href="#" id="navContact">Contact</a></li>
+                            <li><a href="#" id="navBlogs" class="mega-link">Blogs &amp; Insights</a></li>
+                            <li><a href="#" id="navSupport" class="mega-link">Support Center</a></li>
+                            <li><a href="#" id="navContact" class="mega-link">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -115,137 +161,121 @@
         </nav>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- ===== HERO ===== -->
     <section id="hero" class="hero" aria-labelledby="heroTitle">
         <div class="container hero-grid">
             <div class="hero-content">
-                <span class="hero-badge" aria-hidden="true">🚀 India's Biggest AI-Powered Platform</span>
-                <h1 id="heroTitle">Grow Your Business<br>with <span class="highlight">Smile OS</span></h1>
-                <p class="hero-desc">End-to-end business solutions — from loans and consultancy to AI automation and digital services. Trusted by 10,000+ Indian businesses.</p>
+                <span class="hero-badge" aria-hidden="true">🇮🇳 India's #1 Business Platform</span>
+                <h1 id="heroTitle">
+                    Grow Your Business<br>
+                    with <span class="highlight">Smile OS</span>
+                </h1>
+                <p class="hero-desc">India's AI-powered business super app. Get loans, government schemes, digital marketing, AI automation &amp; more — all in one place.</p>
+
                 <div class="hero-actions">
                     <a href="#contact" class="btn-primary hero-cta" id="heroCtaBtn">Start Growing →</a>
                     <a href="#services" class="btn-secondary hero-secondary" id="heroExploreBtn">Explore Services</a>
                 </div>
+
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number" id="statClients" data-count="10000">0+</span>
-                        <span class="stat-label">Happy Clients</span>
+                        <span class="stat-number" id="statYear" data-count="2021">2021</span>
+                        <span class="stat-label">Established</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" id="statAgents" data-count="300">0+</span>
+                        <span class="stat-number" id="statAgents" data-count="300">300+</span>
                         <span class="stat-label">Active Agents</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" id="statFranchise" data-count="150">0+</span>
-                        <span class="stat-label">Franchise Partners</span>
+                        <span class="stat-number" id="statPanIndia">Pan India</span>
+                        <span class="stat-label">Presence</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" id="statLoans" data-count="5000">0+</span>
-                        <span class="stat-label">Loans Disbursed</span>
+                        <span class="stat-number" id="statSolutions">50+</span>
+                        <span class="stat-label">Business Solutions</span>
                     </div>
                 </div>
             </div>
             <div class="hero-visual" aria-hidden="true">
                 <div class="hero-illustration">😊</div>
                 <div class="hero-floating-card card-1">🏦 Business Loan</div>
-                <div class="hero-floating-card card-2">🤖 AI Assistant</div>
-                <div class="hero-floating-card card-3">🇮🇳 Govt. Schemes</div>
+                <div class="hero-floating-card card-2">🇮🇳 Govt. Schemes</div>
+                <div class="hero-floating-card card-3">🤖 AI Assistant</div>
+                <div class="hero-floating-card card-4">📈 Business Growth</div>
             </div>
         </div>
-    </section>
 
-    <!-- ===== OFFER SLIDER ===== -->
-    <section id="offers" class="offers" aria-labelledby="offersTitle">
-        <div class="container">
-            <div class="offers-header">
-                <span class="section-label">Exclusive Offers</span>
-                <h2 id="offersTitle" class="section-title">Special <span class="highlight">Deals</span></h2>
-            </div>
-            <div class="offer-slider" role="region" aria-label="Offer carousel">
-                <div class="offer-track" id="offerTrack">
-                    <div class="offer-card" id="offer1">
-                        <span class="offer-badge" aria-hidden="true">🔥 Limited</span>
-                        <h3>Business Loan @ 8.5%</h3>
-                        <p>Get instant business loans at India's lowest interest rates. Quick approval, minimal paperwork.</p>
-                        <a href="#contact" class="offer-cta" id="offerCta1">Apply Now →</a>
-                    </div>
-                    <div class="offer-card" id="offer2">
-                        <span class="offer-badge" aria-hidden="true">💰 Cashback</span>
-                        <h3>₹5000 Cashback</h3>
-                        <p>On first loan disbursement. Limited period offer. Terms &amp; conditions apply.</p>
-                        <a href="#contact" class="offer-cta" id="offerCta2">Claim Now →</a>
-                    </div>
-                    <div class="offer-card" id="offer3">
-                        <span class="offer-badge" aria-hidden="true">🎁 Free</span>
-                        <h3>Free GST Filing</h3>
-                        <p>First GST filing absolutely free for new businesses. Expert assistance included.</p>
-                        <a href="#contact" class="offer-cta" id="offerCta3">Book Now →</a>
-                    </div>
-                </div>
-                <div class="offer-controls">
-                    <button class="offer-prev" id="offerPrev" aria-label="Previous offer">‹</button>
-                    <button class="offer-next" id="offerNext" aria-label="Next offer">›</button>
+        <!-- Hero Animated Banner -->
+        <div class="hero-banner" role="region" aria-label="Promotional banner">
+            <div class="container hero-banner-inner">
+                <div class="hero-banner-track" id="heroBannerTrack">
+                    <div class="hero-banner-item">🚀 Zero Processing Fee on Business Loans — Apply Now!</div>
+                    <div class="hero-banner-item">💰 Get ₹5000 Cashback on First Loan Disbursement</div>
+                    <div class="hero-banner-item">🇮🇳 Expert Guidance for 50+ Government Schemes</div>
+                    <div class="hero-banner-item">🤖 AI Automation — Transform Your Business Today</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CASHBACK BANNER ===== -->
-    <section id="cashback-banner" class="banner cashback-banner" aria-labelledby="cashbackTitle">
+    <!-- ===== SEARCH ===== -->
+    <section id="search-section" class="search-section" aria-label="Universal search">
         <div class="container">
-            <div class="banner-content">
-                <span class="banner-icon" aria-hidden="true">💰</span>
-                <div class="banner-text">
-                    <h3 id="cashbackTitle">Get ₹5000 Cashback on Your First Loan</h3>
-                    <p>Exclusive offer for new customers. Apply now and get cashback in your wallet.</p>
-                </div>
-                <a href="#contact" class="btn-primary banner-cta" id="cashbackCta">Claim Offer →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== MEMBERSHIP BANNER ===== -->
-    <section id="membership-banner" class="banner membership-banner" aria-labelledby="membershipBannerTitle">
-        <div class="container">
-            <div class="banner-content">
-                <span class="banner-icon" aria-hidden="true">⭐</span>
-                <div class="banner-text">
-                    <h3 id="membershipBannerTitle">Unlock Premium Features with Gold Membership</h3>
-                    <p>Access AI tools, priority support, and advanced analytics. Starting at just ₹999/month.</p>
-                </div>
-                <a href="#membership" class="btn-primary banner-cta" id="membershipBannerCta">View Plans →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== GOVERNMENT SCHEME BANNER ===== -->
-    <section id="govt-banner" class="banner govt-banner" aria-labelledby="govtBannerTitle">
-        <div class="container">
-            <div class="banner-content">
-                <span class="banner-icon" aria-hidden="true">🇮🇳</span>
-                <div class="banner-text">
-                    <h3 id="govtBannerTitle">Government Schemes Made Simple</h3>
-                    <p>Expert guidance to help you access MUDRA, PMEGP, and 50+ other government schemes.</p>
-                </div>
-                <a href="#contact" class="btn-primary banner-cta" id="govtBannerCta">Explore Schemes →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SEARCH BOX ===== -->
-    <section id="search-section" class="search-section" aria-label="Search services">
-        <div class="container">
-            <div class="search-box">
+            <div class="search-box" role="search">
                 <span class="search-icon" aria-hidden="true">🔍</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="Search for loans, services, schemes..." aria-label="Search for business services">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search for loans, services, schemes, AI tools..." aria-label="Search for business services">
                 <button id="searchBtn" class="search-submit" aria-label="Submit search">Search</button>
             </div>
             <div class="search-tags">
-                <span class="search-tag">#BusinessLoan</span>
-                <span class="search-tag">#MSME</span>
-                <span class="search-tag">#GovtSchemes</span>
-                <span class="search-tag">#AIAutomation</span>
-                <span class="search-tag">#GST</span>
+                <button class="search-tag" id="tagBusinessLoan">#BusinessLoan</button>
+                <button class="search-tag" id="tagMSME">#MSME</button>
+                <button class="search-tag" id="tagGovtSchemes">#GovtSchemes</button>
+                <button class="search-tag" id="tagAIAutomation">#AIAutomation</button>
+                <button class="search-tag" id="tagGST">#GST</button>
+                <button class="search-tag" id="tagCRM">#CRM</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OFFERS ===== -->
+    <section id="offers" class="offers" aria-labelledby="offersTitle">
+        <div class="container">
+            <div class="offers-header">
+                <span class="section-label">🔥 Exclusive Offers</span>
+                <h2 id="offersTitle" class="section-title">Special <span class="highlight">Deals</span></h2>
+            </div>
+            <div class="offers-slider" role="region" aria-label="Offer carousel">
+                <div class="offers-track" id="offersTrack">
+                    <div class="offer-card" id="offer1">
+                        <span class="offer-badge" aria-hidden="true">💰 Cashback</span>
+                        <h3>₹5000 Cashback</h3>
+                        <p>On first loan disbursement. Limited period offer for new customers.</p>
+                        <a href="#contact" class="offer-cta" id="offerCta1">Claim Now →</a>
+                    </div>
+                    <div class="offer-card" id="offer2">
+                        <span class="offer-badge" aria-hidden="true">🎉 Festival</span>
+                        <h3>Festival Special</h3>
+                        <p>Zero processing fee on all business loans. Valid till October 31, 2026.</p>
+                        <a href="#contact" class="offer-cta" id="offerCta2">Apply Now →</a>
+                    </div>
+                    <div class="offer-card" id="offer3">
+                        <span class="offer-badge" aria-hidden="true">🇮🇳 Govt.</span>
+                        <h3>Govt. Scheme Support</h3>
+                        <p>Free consultation for 50+ government schemes. Limited slots available.</p>
+                        <a href="#contact" class="offer-cta" id="offerCta3">Book Now →</a>
+                    </div>
+                    <div class="offer-card" id="offer4">
+                        <span class="offer-badge" aria-hidden="true">⭐ Premium</span>
+                        <h3>Membership Offers</h3>
+                        <p>Gold &amp; Premium members get 20% off on all services. Limited time.</p>
+                        <a href="#membership" class="offer-cta" id="offerCta4">View Plans →</a>
+                    </div>
+                </div>
+                <div class="offers-controls">
+                    <button class="offers-prev" id="offersPrev" aria-label="Previous offer">‹</button>
+                    <button class="offers-next" id="offersNext" aria-label="Next offer">›</button>
+                </div>
+                <div class="offers-dots" id="offersDots"></div>
             </div>
         </div>
     </section>
@@ -257,147 +287,138 @@
             <div class="quick-grid">
                 <a href="#" class="quick-item" id="quickLoan">
                     <span class="quick-icon" aria-hidden="true">🏦</span>
-                    <span class="quick-label">Business Loan</span>
+                    <span class="quick-label">Loan</span>
                 </a>
-                <a href="#" class="quick-item" id="quickPersonal">
-                    <span class="quick-icon" aria-hidden="true">👤</span>
-                    <span class="quick-label">Personal Loan</span>
-                </a>
-                <a href="#" class="quick-item" id="quickGovt">
-                    <span class="quick-icon" aria-hidden="true">🇮🇳</span>
-                    <span class="quick-label">Govt. Schemes</span>
+                <a href="#" class="quick-item" id="quickInsurance">
+                    <span class="quick-icon" aria-hidden="true">🛡️</span>
+                    <span class="quick-label">Insurance</span>
                 </a>
                 <a href="#" class="quick-item" id="quickGST">
                     <span class="quick-icon" aria-hidden="true">📊</span>
-                    <span class="quick-label">GST &amp; ITR</span>
+                    <span class="quick-label">GST</span>
                 </a>
-                <a href="#" class="quick-item" id="quickAI">
-                    <span class="quick-icon" aria-hidden="true">🤖</span>
-                    <span class="quick-label">AI Automation</span>
+                <a href="#" class="quick-item" id="quickITR">
+                    <span class="quick-icon" aria-hidden="true">📄</span>
+                    <span class="quick-label">ITR</span>
                 </a>
-                <a href="#" class="quick-item" id="quickMarketing">
-                    <span class="quick-icon" aria-hidden="true">📱</span>
-                    <span class="quick-label">Digital Marketing</span>
-                </a>
-                <a href="#" class="quick-item" id="quickWeb">
+                <a href="#" class="quick-item" id="quickWebsite">
                     <span class="quick-icon" aria-hidden="true">💻</span>
-                    <span class="quick-label">Website Dev</span>
+                    <span class="quick-label">Website</span>
                 </a>
                 <a href="#" class="quick-item" id="quickCRM">
                     <span class="quick-icon" aria-hidden="true">📋</span>
                     <span class="quick-label">CRM</span>
                 </a>
+                <a href="#" class="quick-item" id="quickAI">
+                    <span class="quick-icon" aria-hidden="true">🤖</span>
+                    <span class="quick-label">AI</span>
+                </a>
+                <a href="#" class="quick-item" id="quickMarketing">
+                    <span class="quick-icon" aria-hidden="true">📱</span>
+                    <span class="quick-label">Marketing</span>
+                </a>
+                <a href="#" class="quick-item" id="quickRegistration">
+                    <span class="quick-icon" aria-hidden="true">📝</span>
+                    <span class="quick-label">Registration</span>
+                </a>
+                <a href="#" class="quick-item" id="quickFunding">
+                    <span class="quick-icon" aria-hidden="true">💰</span>
+                    <span class="quick-label">Funding</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== POPULAR CATEGORIES ===== -->
+    <!-- ===== LIVE SERVICES ===== -->
+    <section id="live-services" class="live-services" aria-labelledby="liveServicesTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">⚡ Live Services</span>
+                <h2 id="liveServicesTitle" class="section-title">Popular &amp; <span class="highlight">Trending</span></h2>
+            </div>
+            <div class="live-tabs" role="tablist">
+                <button class="live-tab active" id="tabPopular" role="tab" aria-selected="true">Popular</button>
+                <button class="live-tab" id="tabTrending" role="tab" aria-selected="false">Trending</button>
+                <button class="live-tab" id="tabRecommended" role="tab" aria-selected="false">Recommended</button>
+            </div>
+            <div class="live-grid" id="liveGrid">
+                <div class="live-card" id="live1">
+                    <span class="live-icon" aria-hidden="true">🏦</span>
+                    <h4>Business Loan</h4>
+                    <p>Quick approval, best rates</p>
+                    <span class="live-badge">🔥 Popular</span>
+                </div>
+                <div class="live-card" id="live2">
+                    <span class="live-icon" aria-hidden="true">🇮🇳</span>
+                    <h4>Govt. Schemes</h4>
+                    <p>50+ schemes access</p>
+                    <span class="live-badge">⭐ Trending</span>
+                </div>
+                <div class="live-card" id="live3">
+                    <span class="live-icon" aria-hidden="true">🤖</span>
+                    <h4>AI Automation</h4>
+                    <p>Smart business tools</p>
+                    <span class="live-badge">✨ New</span>
+                </div>
+                <div class="live-card" id="live4">
+                    <span class="live-icon" aria-hidden="true">📱</span>
+                    <h4>Digital Marketing</h4>
+                    <p>Grow online presence</p>
+                    <span class="live-badge">📈 Trending</span>
+                </div>
+                <div class="live-card" id="live5">
+                    <span class="live-icon" aria-hidden="true">💻</span>
+                    <h4>Website Development</h4>
+                    <p>Modern responsive sites</p>
+                    <span class="live-badge">🔥 Popular</span>
+                </div>
+                <div class="live-card" id="live6">
+                    <span class="live-icon" aria-hidden="true">📊</span>
+                    <h4>GST &amp; ITR</h4>
+                    <p>Expert compliance</p>
+                    <span class="live-badge">🛡️ Recommended</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BUSINESS CATEGORIES ===== -->
     <section id="categories" class="categories" aria-labelledby="categoriesTitle">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Categories</span>
-                <h2 id="categoriesTitle" class="section-title">Popular <span class="highlight">Services</span></h2>
+                <h2 id="categoriesTitle" class="section-title">Explore <span class="highlight">Business Solutions</span></h2>
             </div>
-            <div class="category-grid">
-                <div class="category-card" id="catLoan">
-                    <span class="cat-icon" aria-hidden="true">🏦</span>
-                    <h3>Loans</h3>
-                    <p>Business, personal, home, and MSME loans with best rates.</p>
-                    <a href="#contact" class="cat-link" id="catLoanLink">Explore →</a>
-                </div>
-                <div class="category-card" id="catSchemes">
+            <div class="categories-grid">
+                <a href="#" class="category-card" id="catFinance">
+                    <span class="cat-icon" aria-hidden="true">💰</span>
+                    <h3>Finance &amp; Loans</h3>
+                    <p>Business, personal, home, MSME loans</p>
+                </a>
+                <a href="#" class="category-card" id="catGovernment">
                     <span class="cat-icon" aria-hidden="true">🇮🇳</span>
                     <h3>Government Schemes</h3>
-                    <p>Navigate and apply for 50+ central and state schemes.</p>
-                    <a href="#contact" class="cat-link" id="catSchemesLink">Explore →</a>
-                </div>
-                <div class="category-card" id="catConsultancy">
-                    <span class="cat-icon" aria-hidden="true">📈</span>
-                    <h3>Consultancy</h3>
-                    <p>Startup, GST, ITR, trademark, and business registration.</p>
-                    <a href="#contact" class="cat-link" id="catConsultancyLink">Explore →</a>
-                </div>
-                <div class="category-card" id="catDigital">
+                    <p>MUDRA, PMEGP, subsidies &amp; more</p>
+                </a>
+                <a href="#" class="category-card" id="catLegal">
+                    <span class="cat-icon" aria-hidden="true">📋</span>
+                    <h3>Legal &amp; Compliance</h3>
+                    <p>GST, ITR, trademark, registration</p>
+                </a>
+                <a href="#" class="category-card" id="catDigital">
                     <span class="cat-icon" aria-hidden="true">💻</span>
                     <h3>Digital Services</h3>
-                    <p>Marketing, website, app, CRM, and AI automation.</p>
-                    <a href="#contact" class="cat-link" id="catDigitalLink">Explore →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== LOAN CATEGORIES ===== -->
-    <section id="loan-categories" class="loan-categories" aria-labelledby="loanCatTitle">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Loans</span>
-                <h2 id="loanCatTitle" class="section-title">Find Your <span class="highlight">Loan</span></h2>
-            </div>
-            <div class="loan-grid">
-                <a href="#" class="loan-item" id="loanBusiness">
-                    <span aria-hidden="true">🏢</span>
-                    <div>
-                        <h4>Business Loan</h4>
-                        <p>Up to ₹50 Lakhs</p>
-                    </div>
+                    <p>Marketing, website, app, CRM</p>
                 </a>
-                <a href="#" class="loan-item" id="loanPersonal">
-                    <span aria-hidden="true">👤</span>
-                    <div>
-                        <h4>Personal Loan</h4>
-                        <p>Up to ₹25 Lakhs</p>
-                    </div>
+                <a href="#" class="category-card" id="catAI">
+                    <span class="cat-icon" aria-hidden="true">🤖</span>
+                    <h3>AI &amp; Automation</h3>
+                    <p>Smart tools, chatbots, analytics</p>
                 </a>
-                <a href="#" class="loan-item" id="loanHome">
-                    <span aria-hidden="true">🏠</span>
-                    <div>
-                        <h4>Home Loan</h4>
-                        <p>Up to ₹5 Crores</p>
-                    </div>
-                </a>
-                <a href="#" class="loan-item" id="loanMSME">
-                    <span aria-hidden="true">🏭</span>
-                    <div>
-                        <h4>MSME Loan</h4>
-                        <p>Up to ₹1 Crore</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BUSINESS GROWTH CATEGORIES ===== -->
-    <section id="growth-categories" class="growth-categories" aria-labelledby="growthCatTitle">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Growth</span>
-                <h2 id="growthCatTitle" class="section-title">Scale Your <span class="highlight">Business</span></h2>
-            </div>
-            <div class="growth-grid">
-                <a href="#" class="growth-item" id="growthMarketing">
-                    <span aria-hidden="true">📱</span>
-                    <h4>Digital Marketing</h4>
-                </a>
-                <a href="#" class="growth-item" id="growthWeb">
-                    <span aria-hidden="true">💻</span>
-                    <h4>Website Development</h4>
-                </a>
-                <a href="#" class="growth-item" id="growthCRM">
-                    <span aria-hidden="true">📋</span>
-                    <h4>CRM Solutions</h4>
-                </a>
-                <a href="#" class="growth-item" id="growthAI">
-                    <span aria-hidden="true">🤖</span>
-                    <h4>AI Automation</h4>
-                </a>
-                <a href="#" class="growth-item" id="growthBranding">
-                    <span aria-hidden="true">🎨</span>
-                    <h4>Branding</h4>
-                </a>
-                <a href="#" class="growth-item" id="growthConsult">
-                    <span aria-hidden="true">📈</span>
-                    <h4>Business Consultancy</h4>
+                <a href="#" class="category-card" id="catGrowth">
+                    <span class="cat-icon" aria-hidden="true">📈</span>
+                    <h3>Business Growth</h3>
+                    <p>Consultancy, funding, expansion</p>
                 </a>
             </div>
         </div>
@@ -410,50 +431,16 @@
                 <div class="ai-content">
                     <span class="ai-badge" aria-hidden="true">🤖 AI Powered</span>
                     <h2 id="aiTitle">Your 24/7 <span class="highlight">AI Business Assistant</span></h2>
-                    <p>Get instant answers, generate reports, automate tasks, and make data-driven decisions with Smile AI.</p>
+                    <p>Get instant answers, generate reports, automate tasks, and make data-driven decisions with Smile AI. Powered by OpenAI GPT-4.</p>
+                    <ul class="ai-features">
+                        <li>🔍 Smart search &amp; discovery</li>
+                        <li>📊 Automated reporting</li>
+                        <li>💡 Predictive insights</li>
+                        <li>🤝 Customer support automation</li>
+                    </ul>
                     <a href="#" class="btn-primary ai-cta" id="aiCta">Try AI Assistant →</a>
                 </div>
                 <div class="ai-visual" aria-hidden="true">🤖</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FEATURED SERVICES ===== -->
-    <section id="featured-services" class="featured-services" aria-labelledby="featuredTitle">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Featured</span>
-                <h2 id="featuredTitle" class="section-title">Most <span class="highlight">Popular</span> Services</h2>
-            </div>
-            <div class="featured-grid">
-                <article class="featured-card" id="featuredLoan">
-                    <span class="featured-badge" aria-hidden="true">🔥 Trending</span>
-                    <div class="featured-icon" aria-hidden="true">🏦</div>
-                    <h3>Business Loan</h3>
-                    <p>Quick approval, competitive rates, and flexible repayment options.</p>
-                    <a href="#contact" class="featured-link" id="featuredLoanLink">Apply Now →</a>
-                </article>
-                <article class="featured-card" id="featuredAI">
-                    <span class="featured-badge" aria-hidden="true">✨ New</span>
-                    <div class="featured-icon" aria-hidden="true">🤖</div>
-                    <h3>AI Automation</h3>
-                    <p>Automate workflows, generate content, and gain insights with our AI suite.</p>
-                    <a href="#contact" class="featured-link" id="featuredAILink">Learn More →</a>
-                </article>
-                <article class="featured-card" id="featuredGovt">
-                    <span class="featured-badge" aria-hidden="true">🇮🇳</span>
-                    <div class="featured-icon" aria-hidden="true">📋</div>
-                    <h3>Government Schemes</h3>
-                    <p>Expert guidance to access 50+ schemes for your business growth.</p>
-                    <a href="#contact" class="featured-link" id="featuredGovtLink">Explore →</a>
-                </article>
-                <article class="featured-card" id="featuredMarketing">
-                    <span class="featured-badge" aria-hidden="true">📈</span>
-                    <div class="featured-icon" aria-hidden="true">📱</div>
-                    <h3>Digital Marketing</h3>
-                    <p>SEO, social media, and content marketing to grow your online presence.</p>
-                    <a href="#contact" class="featured-link" id="featuredMarketingLink">Get Started →</a>
-                </article>
             </div>
         </div>
     </section>
@@ -500,46 +487,6 @@
         </div>
     </section>
 
-    <!-- ===== HOW WE WORK ===== -->
-    <section id="how-we-work" class="how-we-work" aria-labelledby="howTitle">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">How It Works</span>
-                <h2 id="howTitle" class="section-title">Simple <span class="highlight">Process</span></h2>
-            </div>
-            <div class="steps-grid">
-                <div class="step-item" id="step1">
-                    <span class="step-number" aria-hidden="true">01</span>
-                    <div class="step-content">
-                        <h4>Sign Up</h4>
-                        <p>Create your free account in 2 minutes. No credit card required.</p>
-                    </div>
-                </div>
-                <div class="step-item" id="step2">
-                    <span class="step-number" aria-hidden="true">02</span>
-                    <div class="step-content">
-                        <h4>Choose Plan</h4>
-                        <p>Select a membership plan that fits your business needs and budget.</p>
-                    </div>
-                </div>
-                <div class="step-item" id="step3">
-                    <span class="step-number" aria-hidden="true">03</span>
-                    <div class="step-content">
-                        <h4>Access Services</h4>
-                        <p>Explore loans, consultancy, AI tools, and digital services instantly.</p>
-                    </div>
-                </div>
-                <div class="step-item" id="step4">
-                    <span class="step-number" aria-hidden="true">04</span>
-                    <div class="step-content">
-                        <h4>Grow &amp; Scale</h4>
-                        <p>Use Smile OS insights to grow your business exponentially.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== SUCCESS JOURNEY ===== -->
     <section id="success-journey" class="success-journey" aria-labelledby="journeyTitle">
         <div class="container">
@@ -580,52 +527,44 @@
         </div>
     </section>
 
-    <!-- ===== LIVE STATISTICS ===== -->
-    <section id="statistics" class="statistics" aria-labelledby="statsTitle">
+    <!-- ===== LIVE COUNTERS ===== -->
+    <section id="counters" class="counters" aria-labelledby="countersTitle">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card" id="statCard1">
-                    <span class="stat-number" data-count="10000">0</span>
-                    <span class="stat-label">Happy Clients</span>
+            <div class="counters-grid">
+                <div class="counter-item" id="counter1">
+                    <span class="counter-number" data-count="2021">0</span>
+                    <span class="counter-label">Established</span>
                 </div>
-                <div class="stat-card" id="statCard2">
-                    <span class="stat-number" data-count="300">0</span>
-                    <span class="stat-label">Active Agents</span>
+                <div class="counter-item" id="counter2">
+                    <span class="counter-number" data-count="300">0</span>
+                    <span class="counter-label">Active Agents</span>
                 </div>
-                <div class="stat-card" id="statCard3">
-                    <span class="stat-number" data-count="150">0</span>
-                    <span class="stat-label">Franchise Partners</span>
+                <div class="counter-item" id="counter3">
+                    <span class="counter-number" data-count="28">0</span>
+                    <span class="counter-label">States Covered</span>
                 </div>
-                <div class="stat-card" id="statCard4">
-                    <span class="stat-number" data-count="5000">0</span>
-                    <span class="stat-label">Loans Disbursed</span>
-                </div>
-                <div class="stat-card" id="statCard5">
-                    <span class="stat-number" data-count="50">0</span>
-                    <span class="stat-label">Govt. Schemes</span>
-                </div>
-                <div class="stat-card" id="statCard6">
-                    <span class="stat-number" data-count="28">0</span>
-                    <span class="stat-label">States Covered</span>
+                <div class="counter-item" id="counter4">
+                    <span class="counter-number" data-count="50">0</span>
+                    <span class="counter-label">Business Solutions</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== PARTNER BANKS ===== -->
-    <section id="partners" class="partners" aria-labelledby="partnersTitle">
+    <section id="partner-banks" class="partner-banks" aria-labelledby="banksTitle">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Partners</span>
-                <h2 id="partnersTitle" class="section-title">Trusted <span class="highlight">Partners</span></h2>
+                <span class="section-label">Banking Partners</span>
+                <h2 id="banksTitle" class="section-title">Trusted <span class="highlight">Banks</span></h2>
             </div>
-            <div class="partners-grid">
-                <div class="partner-item" id="partnerHDFC">🏦 HDFC Bank</div>
-                <div class="partner-item" id="partnerICICI">🏦 ICICI Bank</div>
-                <div class="partner-item" id="partnerSBI">🏦 SBI</div>
-                <div class="partner-item" id="partnerAxis">🏦 Axis Bank</div>
-                <div class="partner-item" id="partnerYes">🏦 Yes Bank</div>
-                <div class="partner-item" id="partnerKotak">🏦 Kotak Mahindra</div>
+            <div class="banks-grid">
+                <div class="bank-item" id="bankHDFC">🏦 HDFC Bank</div>
+                <div class="bank-item" id="bankICICI">🏦 ICICI Bank</div>
+                <div class="bank-item" id="bankSBI">🏦 SBI</div>
+                <div class="bank-item" id="bankAxis">🏦 Axis Bank</div>
+                <div class="bank-item" id="bankYes">🏦 Yes Bank</div>
+                <div class="bank-item" id="bankKotak">🏦 Kotak Mahindra</div>
             </div>
         </div>
     </section>
@@ -648,49 +587,7 @@
         </div>
     </section>
 
-    <!-- ===== BECOME AGENT ===== -->
-    <section id="agent" class="agent" aria-labelledby="agentTitle">
-        <div class="container">
-            <div class="agent-card">
-                <div class="agent-content">
-                    <span class="agent-badge" aria-hidden="true">👔 Career</span>
-                    <h2 id="agentTitle">Become a <span class="highlight">Smile OS Agent</span></h2>
-                    <p>Earn commissions, build your network, and grow with India's fastest-growing business platform. Join 300+ active agents across India.</p>
-                    <ul class="agent-benefits">
-                        <li>💰 Attractive commission structure</li>
-                        <li>📱 Digital tools &amp; support</li>
-                        <li>📚 Free training &amp; certification</li>
-                        <li>🤝 Pan India network</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary agent-cta" id="agentCta">Apply as Agent →</a>
-                </div>
-                <div class="agent-visual" aria-hidden="true">👔</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FRANCHISE ===== -->
-    <section id="franchise" class="franchise" aria-labelledby="franchiseTitle">
-        <div class="container">
-            <div class="franchise-card">
-                <div class="franchise-content">
-                    <span class="franchise-badge" aria-hidden="true">🏢 Opportunity</span>
-                    <h2 id="franchiseTitle">Own a <span class="highlight">Smile OS Franchise</span></h2>
-                    <p>Join our growing franchise network and build a profitable business with our proven model, training, and support.</p>
-                    <ul class="franchise-benefits">
-                        <li>📈 Proven business model</li>
-                        <li>📚 Comprehensive training</li>
-                        <li>🤝 Pan India network</li>
-                        <li>🛠️ Full operational support</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary franchise-cta" id="franchiseCta">Explore Franchise →</a>
-                </div>
-                <div class="franchise-visual" aria-hidden="true">🏢</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== MEMBERSHIP PLANS ===== -->
+    <!-- ===== MEMBERSHIP ===== -->
     <section id="membership" class="membership" aria-labelledby="membershipTitle">
         <div class="container">
             <div class="section-header">
@@ -765,6 +662,27 @@
         </div>
     </section>
 
+    <!-- ===== BECOME AGENT ===== -->
+    <section id="become-agent" class="become-agent" aria-labelledby="agentTitle">
+        <div class="container">
+            <div class="agent-card">
+                <div class="agent-content">
+                    <span class="agent-badge" aria-hidden="true">👔 Career</span>
+                    <h2 id="agentTitle">Become a <span class="highlight">Smile OS Agent</span></h2>
+                    <p>Earn commissions, build your network, and grow with India's fastest-growing business platform. Join 300+ active agents across India.</p>
+                    <ul class="agent-benefits">
+                        <li>💰 Attractive commission structure</li>
+                        <li>📱 Digital tools &amp; support</li>
+                        <li>📚 Free training &amp; certification</li>
+                        <li>🤝 Pan India network</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary agent-cta" id="agentCta">Apply as Agent →</a>
+                </div>
+                <div class="agent-visual" aria-hidden="true">👔</div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== TESTIMONIALS ===== -->
     <section id="testimonials" class="testimonials" aria-labelledby="testimonialsTitle">
         <div class="container">
@@ -804,6 +722,45 @@
                             <span class="author-name">Amit Singh</span>
                             <span class="author-role">Franchise Partner</span>
                         </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LATEST BLOGS ===== -->
+    <section id="blogs" class="blogs" aria-labelledby="blogsTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Blogs</span>
+                <h2 id="blogsTitle" class="section-title">Latest <span class="highlight">Insights</span></h2>
+            </div>
+            <div class="blogs-grid">
+                <article class="blog-card" id="blog1">
+                    <div class="blog-image" aria-hidden="true">📈</div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Finance</span>
+                        <h3>How to Get a Business Loan in 2026</h3>
+                        <p>Complete guide to business loan eligibility, documentation, and approval process.</p>
+                        <a href="#" class="blog-link" id="blogLink1">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card" id="blog2">
+                    <div class="blog-image" aria-hidden="true">🇮🇳</div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Government</span>
+                        <h3>Top 10 Government Schemes for MSMEs</h3>
+                        <p>Discover government schemes that can help your MSME grow with subsidies and support.</p>
+                        <a href="#" class="blog-link" id="blogLink2">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card" id="blog3">
+                    <div class="blog-image" aria-hidden="true">🤖</div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Technology</span>
+                        <h3>AI Automation for Small Businesses</h3>
+                        <p>How AI can automate your business operations and help you scale faster.</p>
+                        <a href="#" class="blog-link" id="blogLink3">Read More →</a>
                     </div>
                 </article>
             </div>
@@ -867,46 +824,7 @@
         </div>
     </section>
 
-    <!-- ===== BLOGS ===== -->
-    <section id="blogs" class="blogs" aria-labelledby="blogsTitle">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Blogs</span>
-                <h2 id="blogsTitle" class="section-title">Latest <span class="highlight">Insights</span></h2>
-            </div>
-            <div class="blogs-grid">
-                <article class="blog-card" id="blog1">
-                    <div class="blog-image" aria-hidden="true">📈</div>
-                    <div class="blog-content">
-                        <span class="blog-tag">Finance</span>
-                        <h3>How to Get a Business Loan in 2024</h3>
-                        <p>Complete guide to business loan eligibility, documentation, and approval process.</p>
-                        <a href="#" class="blog-link" id="blogLink1">Read More →</a>
-                    </div>
-                </article>
-                <article class="blog-card" id="blog2">
-                    <div class="blog-image" aria-hidden="true">🇮🇳</div>
-                    <div class="blog-content">
-                        <span class="blog-tag">Government</span>
-                        <h3>Top 10 Government Schemes for MSMEs</h3>
-                        <p>Discover government schemes that can help your MSME grow with subsidies and support.</p>
-                        <a href="#" class="blog-link" id="blogLink2">Read More →</a>
-                    </div>
-                </article>
-                <article class="blog-card" id="blog3">
-                    <div class="blog-image" aria-hidden="true">🤖</div>
-                    <div class="blog-content">
-                        <span class="blog-tag">Technology</span>
-                        <h3>AI Automation for Small Businesses</h3>
-                        <p>How AI can automate your business operations and help you scale faster.</p>
-                        <a href="#" class="blog-link" id="blogLink3">Read More →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT CTA ===== -->
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="contact" aria-labelledby="contactTitle">
         <div class="container">
             <div class="contact-card">
@@ -994,7 +912,7 @@
                         <span class="logo-icon" aria-hidden="true">😊</span>
                         <span>Smile<span>OS</span></span>
                     </div>
-                    <p>India's Biggest AI-Powered Business Growth Platform. Empowering businesses with end-to-end solutions since 2021.</p>
+                    <p>India's biggest AI-powered business growth platform. Empowering businesses with end-to-end solutions since 2021.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook">📘</a>
                         <a href="#" aria-label="Instagram">📸</a>
@@ -1012,9 +930,9 @@
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="#loan-categories">Loans</a>
-                    <a href="#growth-categories">Consultancy</a>
-                    <a href="#growth-categories">Digital Marketing</a>
+                    <a href="#categories">Loans</a>
+                    <a href="#categories">Consultancy</a>
+                    <a href="#categories">Digital Marketing</a>
                     <a href="#ai-assistant">AI Automation</a>
                 </div>
                 <div class="footer-col">
@@ -1033,7 +951,7 @@
     </footer>
 
     <!-- ===== BOTTOM NAVIGATION ===== -->
-    <nav id="bottom-navigation" class="bottom-nav" role="navigation" aria-label="Bottom navigation">
+    <nav id="bottom-nav" class="bottom-nav" role="navigation" aria-label="Bottom navigation">
         <div class="bottom-nav-inner">
             <a href="#hero" class="bottom-nav-item active" id="navHome" aria-label="Home">
                 <span class="nav-icon" aria-hidden="true">🏠</span>
@@ -1053,7 +971,7 @@
             </button>
             <button class="bottom-nav-item" id="navAccount" aria-label="Account">
                 <span class="nav-icon" aria-hidden="true">👤</span>
-                <span class="nav-label">Account</span>
+                <span class="nav-label">Profile</span>
             </button>
         </div>
     </nav>
