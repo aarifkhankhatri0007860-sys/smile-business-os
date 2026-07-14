@@ -3,1548 +3,716 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <meta name="theme-color" content="#1A1A2E">
-    <meta name="description" content="Smile Business OS - India's Biggest AI-Powered Business Growth Platform. End-to-end business solutions including loans, consultancy, and digital services.">
-    <meta name="keywords" content="business loan, personal loan, home loan, MSME, government schemes, startup consultancy, GST, ITR, trademark, business registration, digital marketing, AI automation, India">
+    <meta name="theme-color" content="#0A0A1A">
+    <meta name="description" content="Smile Business OS - India's Biggest AI-Powered Business Growth Platform. End-to-end business solutions including loans, consultancy, digital services, and AI automation.">
+    <meta name="keywords" content="business loan, personal loan, home loan, MSME, government schemes, startup consultancy, GST, ITR, trademark, business registration, digital marketing, AI automation, CRM, franchise, India">
     <meta name="author" content="Smile Financial Solution">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Smile Business OS - India's Biggest AI-Powered Business Growth Platform">
-    <meta property="og:description" content="End-to-end business solutions powered by AI. Business loans, consultancy, digital services, and more.">
+    <meta property="og:title" content="Smile Business OS - AI-Powered Business Growth Platform">
+    <meta property="og:description" content="End-to-end business solutions for Indian businesses. Loans, consultancy, digital services, and AI automation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://smilebusinessos.com">
+    <meta property="og:image" content="https://smilebusinessos.com/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Smile Business OS - AI-Powered Business Growth Platform">
-    <meta name="twitter:description" content="End-to-end business solutions for Indian businesses.">
+    <meta name="twitter:description" content="End-to-end business solutions powered by AI for Indian businesses.">
+    <link rel="canonical" href="https://smilebusinessos.com">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Smile Business OS - AI-Powered Business Growth Platform</title>
-    <style>
-        /* ===== CSS Variables ===== */
-        :root {
-            --primary: #00D4FF;
-            --primary-dark: #0099CC;
-            --secondary: #FF6B6B;
-            --accent: #FFD93D;
-            --gradient-1: linear-gradient(135deg, #00D4FF 0%, #0066FF 100%);
-            --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF3366 100%);
-            --gradient-3: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
-            --dark: #0A0A1A;
-            --dark-card: #1A1A2E;
-            --dark-surface: #16213E;
-            --light: #FFFFFF;
-            --light-gray: #F0F4F8;
-            --gray: #6B7280;
-            --text-dark: #1A1A2E;
-            --text-light: #FFFFFF;
-            --text-muted: #9CA3AF;
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --radius: 20px;
-            --radius-sm: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-primary: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            --max-width: 1280px;
-        }
-
-        /* ===== Reset & Base ===== */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            background: var(--dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background 0.5s, color 0.5s;
-        }
-
-        body.light-mode {
-            background: var(--light-gray);
-            color: var(--text-dark);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-            font-size: inherit;
-            background: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ===== Scrollbar ===== */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
-
-        /* ===== Loading Screen ===== */
-        #loader {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            background: var(--dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 32px;
-            transition: opacity 0.8s, visibility 0.8s;
-        }
-        #loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .loader-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(0, 212, 255, 0.1);
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        .loader-text {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: 4px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        @keyframes pulse {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        /* ===== Theme Toggle ===== */
-        .theme-toggle {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 999;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            color: var(--dark);
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        .theme-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        /* ===== Header ===== */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 16px 0;
-            background: rgba(10, 10, 26, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-        body.light-mode .header {
-            background: rgba(255, 255, 255, 0.9);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .header.scrolled {
-            padding: 10px 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: var(--dark);
-            font-weight: 900;
-        }
-        .logo span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* ===== Mega Navigation ===== */
-        .nav-toggle {
-            display: none;
-            font-size: 28px;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            width: 48px;
-            height: 48px;
-            align-items: center;
-            justify-content: center;
-        }
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-        .nav-menu a {
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            padding: 4px 0;
-        }
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transition: var(--transition);
-        }
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-        .nav-cta {
-            padding: 10px 24px;
-            border-radius: 50px;
-            background: var(--gradient-1);
-            color: var(--dark) !important;
-            font-weight: 700 !important;
-            transition: var(--transition);
-        }
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-        }
-        .nav-cta::after {
-            display: none !important;
-        }
-
-        @media (max-width: 992px) {
-            .nav-toggle {
-                display: flex;
-            }
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 400px;
-                height: 100vh;
-                background: var(--dark);
-                flex-direction: column;
-                padding: 80px 40px 40px;
-                gap: 20px;
-                transition: var(--transition);
-                overflow-y: auto;
-                border-left: 1px solid rgba(255, 255, 255, 0.05);
-            }
-            body.light-mode .nav-menu {
-                background: var(--light);
-            }
-            .nav-menu.open {
-                right: 0;
-            }
-            .nav-menu a {
-                font-size: 18px;
-                width: 100%;
-                padding: 12px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-            .nav-cta {
-                text-align: center;
-                margin-top: 12px;
-            }
-        }
-
-        /* ===== Hero ===== */
-        .hero {
-            padding: 140px 0 80px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 50px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-        .hero h1 .highlight {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero p {
-            font-size: 20px;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin-bottom: 32px;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            padding: 14px 36px;
-            border-radius: 50px;
-            background: var(--gradient-1);
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 16px;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
-        }
-        .btn-secondary {
-            padding: 14px 36px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            font-weight: 600;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-        body.light-mode .btn-secondary {
-            border-color: rgba(0, 0, 0, 0.1);
-            color: var(--text-dark);
-        }
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .hero-stat {
-            text-align: center;
-        }
-        .hero-stat .number {
-            font-size: 36px;
-            font-weight: 900;
-            color: var(--primary);
-        }
-        .hero-stat .label {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero-visual-box {
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 1;
-            background: var(--gradient-1);
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            animation: float 6s ease-in-out infinite;
-            box-shadow: 0 40px 80px rgba(0, 212, 255, 0.15);
-        }
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero h1 {
-                font-size: 40px;
-            }
-            .hero-stats {
-                justify-items: center;
-            }
-            .hero-visual {
-                order: -1;
-            }
-            .hero-visual-box {
-                max-width: 300px;
-                font-size: 50px;
-            }
-        }
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        /* ===== Section Common ===== */
-        .section {
-            padding: 80px 0;
-            position: relative;
-        }
-        .section-label {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        .section-title {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-        .section-title .highlight {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .section-desc {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 600px;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-header .section-desc {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (max-width: 576px) {
-            .section-title {
-                font-size: 30px;
-            }
-            .section {
-                padding: 60px 0;
-            }
-        }
-
-        /* ===== Service Cards ===== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-        .service-card {
-            background: var(--dark-card);
-            border-radius: var(--radius);
-            padding: 32px 24px;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        body.light-mode .service-card {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.1);
-        }
-        .service-card .icon {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-        .service-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        /* ===== Membership ===== */
-        .membership-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
-        .membership-card {
-            background: var(--dark-card);
-            border-radius: var(--radius);
-            padding: 32px 24px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-            position: relative;
-        }
-        body.light-mode .membership-card {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .membership-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-        }
-        .membership-card.popular {
-            border-color: var(--primary);
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.05);
-        }
-        .membership-card .badge {
-            display: inline-block;
-            padding: 4px 16px;
-            border-radius: 50px;
-            background: var(--gradient-1);
-            color: var(--dark);
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .membership-card .price {
-            font-size: 36px;
-            font-weight: 900;
-            margin: 12px 0;
-        }
-        .membership-card .price small {
-            font-size: 16px;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-        .membership-card ul {
-            text-align: left;
-            margin: 20px 0;
-        }
-        .membership-card ul li {
-            padding: 6px 0;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .membership-card ul li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 900;
-        }
-        .membership-card .btn-primary {
-            width: 100%;
-            justify-content: center;
-        }
-
-        /* ===== CTA Sections ===== */
-        .cta-section {
-            background: var(--gradient-1);
-            border-radius: var(--radius);
-            padding: 60px 40px;
-            text-align: center;
-            color: var(--dark);
-        }
-        .cta-section h2 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-        .cta-section p {
-            font-size: 18px;
-            max-width: 500px;
-            margin: 0 auto 24px;
-            opacity: 0.9;
-        }
-        .cta-section .btn-primary {
-            background: var(--dark);
-            color: var(--text-light);
-        }
-        .cta-section .btn-primary:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* ===== Why Choose Us ===== */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 32px;
-        }
-        .why-item {
-            text-align: center;
-        }
-        .why-item .icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-        .why-item h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .why-item p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* ===== How It Works ===== */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            position: relative;
-        }
-        .step {
-            text-align: center;
-        }
-        .step .number {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 900;
-            margin: 0 auto 16px;
-        }
-        .step h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .step p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* ===== Partners ===== */
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 32px;
-            align-items: center;
-        }
-        .partner-item {
-            background: var(--dark-card);
-            border-radius: var(--radius-sm);
-            padding: 24px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            font-weight: 700;
-            font-size: 18px;
-            transition: var(--transition);
-        }
-        body.light-mode .partner-item {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .partner-item:hover {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-
-        /* ===== Testimonials ===== */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        .testimonial-card {
-            background: var(--dark-card);
-            border-radius: var(--radius);
-            padding: 32px 24px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-        body.light-mode .testimonial-card {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .testimonial-card:hover {
-            border-color: var(--primary);
-        }
-        .testimonial-card .stars {
-            color: var(--accent);
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-        .testimonial-card blockquote {
-            font-size: 16px;
-            font-style: italic;
-            margin-bottom: 16px;
-            color: var(--text-muted);
-        }
-        .testimonial-card .author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .testimonial-card .author .avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        .testimonial-card .author .name {
-            font-weight: 600;
-        }
-        .testimonial-card .author .role {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* ===== FAQ ===== */
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px 0;
-        }
-        body.light-mode .faq-item {
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 8px 0;
-            transition: var(--transition);
-        }
-        .faq-question:hover {
-            color: var(--primary);
-        }
-        .faq-question .icon {
-            font-size: 24px;
-            transition: var(--transition);
-        }
-        .faq-question.active .icon {
-            transform: rotate(180deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-muted);
-            padding: 0 0 0 4px;
-        }
-        .faq-answer.open {
-            max-height: 300px;
-            padding: 12px 0 0 4px;
-        }
-
-        /* ===== Contact ===== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        .contact-info h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .contact-info p {
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 15px;
-        }
-        .contact-detail .icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(0, 212, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border-radius: var(--radius-sm);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: var(--dark-card);
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 15px;
-            transition: var(--transition);
-            margin-bottom: 16px;
-        }
-        body.light-mode .contact-form input,
-        body.light-mode .contact-form textarea {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-            color: var(--text-dark);
-        }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        .contact-form textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ===== Newsletter ===== */
-        .newsletter-box {
-            background: var(--dark-card);
-            border-radius: var(--radius);
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        body.light-mode .newsletter-box {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .newsletter-box h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .newsletter-box p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-        .newsletter-form {
-            display: flex;
-            gap: 12px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .newsletter-form input {
-            flex: 1;
-            padding: 14px 18px;
-            border-radius: var(--radius-sm);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: var(--dark);
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 15px;
-        }
-        body.light-mode .newsletter-form input {
-            background: var(--light-gray);
-            border-color: rgba(0, 0, 0, 0.05);
-            color: var(--text-dark);
-        }
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        .newsletter-form .btn-primary {
-            padding: 14px 28px;
-            white-space: nowrap;
-        }
-        @media (max-width: 576px) {
-            .newsletter-form {
-                flex-direction: column;
-            }
-            .newsletter-form .btn-primary {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        /* ===== Footer ===== */
-        .footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 60px 0 30px;
-            background: var(--dark-card);
-        }
-        body.light-mode .footer {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-brand p {
-            color: var(--text-muted);
-            margin-top: 12px;
-            font-size: 14px;
-            max-width: 300px;
-        }
-        .footer-col h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .footer-col a {
-            display: block;
-            padding: 6px 0;
-            color: var(--text-muted);
-            font-size: 14px;
-            transition: var(--transition);
-        }
-        .footer-col a:hover {
-            color: var(--primary);
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .footer-social {
-            display: flex;
-            gap: 16px;
-        }
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-size: 18px;
-        }
-        .footer-social a:hover {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-        }
-        @media (max-width: 576px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* ===== Floating Buttons ===== */
-        .floating-btn {
-            position: fixed;
-            z-index: 999;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            color: var(--dark);
-        }
-        .floating-btn:hover {
-            transform: scale(1.1);
-        }
-        .floating-whatsapp {
-            bottom: 20px;
-            left: 20px;
-            background: #25D366;
-        }
-        .floating-ai {
-            bottom: 20px;
-            right: 80px;
-            background: var(--gradient-1);
-        }
-        .back-to-top {
-            bottom: 20px;
-            right: 20px;
-            background: var(--dark-card);
-            color: var(--text-light);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        body.light-mode .back-to-top {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-            color: var(--text-dark);
-        }
-        .back-to-top:hover {
-            background: var(--primary);
-            color: var(--dark);
-        }
-
-        @media (max-width: 576px) {
-            .floating-btn {
-                width: 48px;
-                height: 48px;
-                font-size: 20px;
-            }
-            .floating-whatsapp {
-                left: 12px;
-                bottom: 12px;
-            }
-            .floating-ai {
-                right: 72px;
-                bottom: 12px;
-            }
-            .back-to-top {
-                right: 12px;
-                bottom: 12px;
-            }
-        }
-
-        /* ===== Cookie Consent ===== */
-        .cookie-consent {
-            position: fixed;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: var(--radius);
-            padding: 20px 28px;
-            max-width: 500px;
-            width: 90%;
-            z-index: 9998;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        body.light-mode .cookie-consent {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .cookie-consent p {
-            font-size: 14px;
-            color: var(--text-muted);
-            flex: 1;
-            min-width: 180px;
-        }
-        .cookie-consent button {
-            padding: 8px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: var(--transition);
-            background: var(--gradient-1);
-            color: var(--dark);
-        }
-        .cookie-consent button:hover {
-            transform: scale(1.05);
-        }
-        .cookie-consent .decline {
-            background: transparent;
-            color: var(--text-muted);
-        }
-        .cookie-consent .decline:hover {
-            color: var(--text-light);
-        }
-        @media (max-width: 576px) {
-            .cookie-consent {
-                bottom: 70px;
-                padding: 16px 20px;
-            }
-            .cookie-consent p {
-                font-size: 13px;
-                min-width: 100%;
-                text-align: center;
-            }
-        }
-
-        /* ===== AI Chat Bubble ===== */
-        .ai-chat-bubble {
-            display: none;
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 320px;
-            max-width: 90vw;
-            background: var(--dark-card);
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: var(--shadow);
-            z-index: 999;
-            padding: 20px;
-            transition: var(--transition);
-        }
-        body.light-mode .ai-chat-bubble {
-            background: var(--light);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-        .ai-chat-bubble.open {
-            display: block;
-        }
-        .ai-chat-bubble .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        .ai-chat-bubble .header .close {
-            cursor: pointer;
-            font-size: 20px;
-            opacity: 0.6;
-            transition: var(--transition);
-        }
-        .ai-chat-bubble .header .close:hover {
-            opacity: 1;
-        }
-        .ai-chat-bubble input {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: var(--radius-sm);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: var(--dark);
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 14px;
-        }
-        body.light-mode .ai-chat-bubble input {
-            background: var(--light-gray);
-            border-color: rgba(0, 0, 0, 0.05);
-            color: var(--text-dark);
-        }
-        .ai-chat-bubble input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        .ai-chat-bubble .send {
-            margin-top: 8px;
-            width: 100%;
-            padding: 10px;
-            border-radius: var(--radius-sm);
-            background: var(--gradient-1);
-            color: var(--dark);
-            font-weight: 700;
-            transition: var(--transition);
-        }
-        .ai-chat-bubble .send:hover {
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 576px) {
-            .ai-chat-bubble {
-                right: 12px;
-                bottom: 80px;
-                width: calc(100vw - 24px);
-            }
-        }
-
-        /* ===== Utilities ===== */
-        .text-center {
-            text-align: center;
-        }
-        .mt-20 {
-            margin-top: 20px;
-        }
-        .mt-40 {
-            margin-top: 40px;
-        }
-        .gap-8 {
-            gap: 8px;
-        }
-        .flex-center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
 </head>
 <body>
 
     <!-- ===== LOADING SCREEN ===== -->
-    <div id="loader" role="status" aria-label="Loading">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">SMILE BUSINESS OS</div>
+    <div id="loader" role="status" aria-label="Loading application">
+        <div class="loader-spinner" aria-hidden="true"></div>
+        <div class="loader-text" aria-hidden="true">SMILE BUSINESS OS</div>
     </div>
 
-    <!-- ===== THEME TOGGLE ===== -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">
-        🌙
-    </button>
-
     <!-- ===== HEADER ===== -->
-    <header class="header" id="header" role="banner">
+    <header id="header" class="header" role="banner">
         <div class="container header-inner">
-            <a href="#" class="logo" aria-label="Smile Business OS Home">
-                <span class="logo-icon">😊</span>
-                <span>Smile<span>OS</span></span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-                ☰
-            </button>
-            <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">
-                <a href="#services">Services</a>
-                <a href="#membership">Membership</a>
-                <a href="#why">Why Us</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-                <a href="#contact" class="nav-cta">Get Started</a>
-            </nav>
+            <div class="header-left">
+                <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-icon" aria-hidden="true"></span>
+                </button>
+                <a href="#hero" class="logo" aria-label="Smile Business OS Home">
+                    <span class="logo-icon" aria-hidden="true">😊</span>
+                    <span class="logo-text">Smile<span>OS</span></span>
+                </a>
+            </div>
+            <div class="header-right">
+                <button id="searchToggle" class="header-icon-btn" aria-label="Search">
+                    <span aria-hidden="true">🔍</span>
+                </button>
+                <button id="notificationBtn" class="header-icon-btn" aria-label="Notifications">
+                    <span aria-hidden="true">🔔</span>
+                    <span class="notification-dot" aria-label="3 unread notifications"></span>
+                </button>
+                <button id="profileBtn" class="header-icon-btn profile-btn" aria-label="User profile">
+                    <span class="profile-avatar" aria-hidden="true">👤</span>
+                </button>
+            </div>
         </div>
+
+        <!-- ===== MEGA MENU ===== -->
+        <nav id="megaMenu" class="mega-menu" role="navigation" aria-label="Main navigation">
+            <div class="container mega-menu-inner">
+                <div class="mega-menu-grid">
+                    <div class="mega-column">
+                        <h4 class="mega-title">Financial Solutions</h4>
+                        <ul class="mega-list">
+                            <li><a href="#" id="navBusinessLoan">Business Loan</a></li>
+                            <li><a href="#" id="navPersonalLoan">Personal Loan</a></li>
+                            <li><a href="#" id="navHomeLoan">Home Loan</a></li>
+                            <li><a href="#" id="navMSME">MSME Support</a></li>
+                            <li><a href="#" id="navGovtSchemes">Government Schemes</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-column">
+                        <h4 class="mega-title">Consultancy</h4>
+                        <ul class="mega-list">
+                            <li><a href="#" id="navStartup">Startup Consultancy</a></li>
+                            <li><a href="#" id="navGST">GST &amp; ITR</a></li>
+                            <li><a href="#" id="navTrademark">Trademark &amp; Registration</a></li>
+                            <li><a href="#" id="navBusinessReg">Business Registration</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-column">
+                        <h4 class="mega-title">Digital Services</h4>
+                        <ul class="mega-list">
+                            <li><a href="#" id="navDigitalMarketing">Digital Marketing</a></li>
+                            <li><a href="#" id="navWebDev">Website Development</a></li>
+                            <li><a href="#" id="navAppDev">App Development</a></li>
+                            <li><a href="#" id="navCRM">CRM Development</a></li>
+                            <li><a href="#" id="navAIAutomation">AI Automation</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-column">
+                        <h4 class="mega-title">Business Growth</h4>
+                        <ul class="mega-list">
+                            <li><a href="#" id="navAgent">Become Agent</a></li>
+                            <li><a href="#" id="navFranchise">Franchise</a></li>
+                            <li><a href="#" id="navMembership">Membership Plans</a></li>
+                            <li><a href="#" id="navTraining">Training Portal</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-column">
+                        <h4 class="mega-title">Resources</h4>
+                        <ul class="mega-list">
+                            <li><a href="#" id="navBlogs">Blogs</a></li>
+                            <li><a href="#" id="navSupport">Support</a></li>
+                            <li><a href="#" id="navContact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mega-cta">
+                    <a href="#contact" class="btn-primary mega-cta-btn" id="megaCtaBtn">Get Started →</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home" aria-labelledby="hero-title">
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="hero" aria-labelledby="heroTitle">
         <div class="container hero-grid">
             <div class="hero-content">
-                <span class="hero-badge">🚀 India's Biggest AI-Powered Business Platform</span>
-                <h1 id="hero-title">
-                    Grow Your Business<br>
-                    with <span class="highlight">Smile OS</span>
-                </h1>
-                <p>
-                    End-to-end business solutions — from loans and consultancy to AI automation and digital services.
-                    Trusted by thousands of Indian businesses.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary" id="heroCta">Start Growing →</a>
-                    <a href="#services" class="btn-secondary">Explore Services</a>
+                <span class="hero-badge" aria-hidden="true">🚀 India's Biggest AI-Powered Platform</span>
+                <h1 id="heroTitle">Grow Your Business<br>with <span class="highlight">Smile OS</span></h1>
+                <p class="hero-desc">End-to-end business solutions — from loans and consultancy to AI automation and digital services. Trusted by 10,000+ Indian businesses.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary hero-cta" id="heroCtaBtn">Start Growing →</a>
+                    <a href="#services" class="btn-secondary hero-secondary" id="heroExploreBtn">Explore Services</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="number" data-count="10000">0</div>
-                        <div class="label">Happy Clients</div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="statClients" data-count="10000">0+</span>
+                        <span class="stat-label">Happy Clients</span>
                     </div>
-                    <div class="hero-stat">
-                        <div class="number" data-count="500">0</div>
-                        <div class="label">Franchise Partners</div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="statAgents" data-count="300">0+</span>
+                        <span class="stat-label">Active Agents</span>
                     </div>
-                    <div class="hero-stat">
-                        <div class="number" data-count="5000">0</div>
-                        <div class="label">Loans Disbursed</div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="statFranchise" data-count="150">0+</span>
+                        <span class="stat-label">Franchise Partners</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="statLoans" data-count="5000">0+</span>
+                        <span class="stat-label">Loans Disbursed</span>
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-visual-box" role="img" aria-label="Smile OS illustration">😊</div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-illustration">😊</div>
+                <div class="hero-floating-card card-1">🏦 Business Loan</div>
+                <div class="hero-floating-card card-2">🤖 AI Assistant</div>
+                <div class="hero-floating-card card-3">🇮🇳 Govt. Schemes</div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="section" id="services" aria-labelledby="services-title">
+    <!-- ===== OFFER SLIDER ===== -->
+    <section id="offers" class="offers" aria-labelledby="offersTitle">
+        <div class="container">
+            <div class="offers-header">
+                <span class="section-label">Exclusive Offers</span>
+                <h2 id="offersTitle" class="section-title">Special <span class="highlight">Deals</span></h2>
+            </div>
+            <div class="offer-slider" role="region" aria-label="Offer carousel">
+                <div class="offer-track" id="offerTrack">
+                    <div class="offer-card" id="offer1">
+                        <span class="offer-badge" aria-hidden="true">🔥 Limited</span>
+                        <h3>Business Loan @ 8.5%</h3>
+                        <p>Get instant business loans at India's lowest interest rates. Quick approval, minimal paperwork.</p>
+                        <a href="#contact" class="offer-cta" id="offerCta1">Apply Now →</a>
+                    </div>
+                    <div class="offer-card" id="offer2">
+                        <span class="offer-badge" aria-hidden="true">💰 Cashback</span>
+                        <h3>₹5000 Cashback</h3>
+                        <p>On first loan disbursement. Limited period offer. Terms &amp; conditions apply.</p>
+                        <a href="#contact" class="offer-cta" id="offerCta2">Claim Now →</a>
+                    </div>
+                    <div class="offer-card" id="offer3">
+                        <span class="offer-badge" aria-hidden="true">🎁 Free</span>
+                        <h3>Free GST Filing</h3>
+                        <p>First GST filing absolutely free for new businesses. Expert assistance included.</p>
+                        <a href="#contact" class="offer-cta" id="offerCta3">Book Now →</a>
+                    </div>
+                </div>
+                <div class="offer-controls">
+                    <button class="offer-prev" id="offerPrev" aria-label="Previous offer">‹</button>
+                    <button class="offer-next" id="offerNext" aria-label="Next offer">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CASHBACK BANNER ===== -->
+    <section id="cashback-banner" class="banner cashback-banner" aria-labelledby="cashbackTitle">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-icon" aria-hidden="true">💰</span>
+                <div class="banner-text">
+                    <h3 id="cashbackTitle">Get ₹5000 Cashback on Your First Loan</h3>
+                    <p>Exclusive offer for new customers. Apply now and get cashback in your wallet.</p>
+                </div>
+                <a href="#contact" class="btn-primary banner-cta" id="cashbackCta">Claim Offer →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MEMBERSHIP BANNER ===== -->
+    <section id="membership-banner" class="banner membership-banner" aria-labelledby="membershipBannerTitle">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-icon" aria-hidden="true">⭐</span>
+                <div class="banner-text">
+                    <h3 id="membershipBannerTitle">Unlock Premium Features with Gold Membership</h3>
+                    <p>Access AI tools, priority support, and advanced analytics. Starting at just ₹999/month.</p>
+                </div>
+                <a href="#membership" class="btn-primary banner-cta" id="membershipBannerCta">View Plans →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GOVERNMENT SCHEME BANNER ===== -->
+    <section id="govt-banner" class="banner govt-banner" aria-labelledby="govtBannerTitle">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-icon" aria-hidden="true">🇮🇳</span>
+                <div class="banner-text">
+                    <h3 id="govtBannerTitle">Government Schemes Made Simple</h3>
+                    <p>Expert guidance to help you access MUDRA, PMEGP, and 50+ other government schemes.</p>
+                </div>
+                <a href="#contact" class="btn-primary banner-cta" id="govtBannerCta">Explore Schemes →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEARCH BOX ===== -->
+    <section id="search-section" class="search-section" aria-label="Search services">
+        <div class="container">
+            <div class="search-box">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search for loans, services, schemes..." aria-label="Search for business services">
+                <button id="searchBtn" class="search-submit" aria-label="Submit search">Search</button>
+            </div>
+            <div class="search-tags">
+                <span class="search-tag">#BusinessLoan</span>
+                <span class="search-tag">#MSME</span>
+                <span class="search-tag">#GovtSchemes</span>
+                <span class="search-tag">#AIAutomation</span>
+                <span class="search-tag">#GST</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QUICK SERVICES ===== -->
+    <section id="quick-services" class="quick-services" aria-labelledby="quickServicesTitle">
+        <div class="container">
+            <h2 id="quickServicesTitle" class="section-title">Quick <span class="highlight">Services</span></h2>
+            <div class="quick-grid">
+                <a href="#" class="quick-item" id="quickLoan">
+                    <span class="quick-icon" aria-hidden="true">🏦</span>
+                    <span class="quick-label">Business Loan</span>
+                </a>
+                <a href="#" class="quick-item" id="quickPersonal">
+                    <span class="quick-icon" aria-hidden="true">👤</span>
+                    <span class="quick-label">Personal Loan</span>
+                </a>
+                <a href="#" class="quick-item" id="quickGovt">
+                    <span class="quick-icon" aria-hidden="true">🇮🇳</span>
+                    <span class="quick-label">Govt. Schemes</span>
+                </a>
+                <a href="#" class="quick-item" id="quickGST">
+                    <span class="quick-icon" aria-hidden="true">📊</span>
+                    <span class="quick-label">GST &amp; ITR</span>
+                </a>
+                <a href="#" class="quick-item" id="quickAI">
+                    <span class="quick-icon" aria-hidden="true">🤖</span>
+                    <span class="quick-label">AI Automation</span>
+                </a>
+                <a href="#" class="quick-item" id="quickMarketing">
+                    <span class="quick-icon" aria-hidden="true">📱</span>
+                    <span class="quick-label">Digital Marketing</span>
+                </a>
+                <a href="#" class="quick-item" id="quickWeb">
+                    <span class="quick-icon" aria-hidden="true">💻</span>
+                    <span class="quick-label">Website Dev</span>
+                </a>
+                <a href="#" class="quick-item" id="quickCRM">
+                    <span class="quick-icon" aria-hidden="true">📋</span>
+                    <span class="quick-label">CRM</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POPULAR CATEGORIES ===== -->
+    <section id="categories" class="categories" aria-labelledby="categoriesTitle">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Our Services</span>
-                <h2 class="section-title" id="services-title">Complete <span class="highlight">Business Solutions</span></h2>
-                <p class="section-desc">From financial services to digital transformation — everything you need under one roof.</p>
+                <span class="section-label">Categories</span>
+                <h2 id="categoriesTitle" class="section-title">Popular <span class="highlight">Services</span></h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon">🏦</div>
-                    <h3>Business Loan</h3>
-                    <p>Unsecured &amp; secured loans for your business growth. Quick approval, flexible tenure.</p>
+            <div class="category-grid">
+                <div class="category-card" id="catLoan">
+                    <span class="cat-icon" aria-hidden="true">🏦</span>
+                    <h3>Loans</h3>
+                    <p>Business, personal, home, and MSME loans with best rates.</p>
+                    <a href="#contact" class="cat-link" id="catLoanLink">Explore →</a>
                 </div>
-                <div class="service-card">
-                    <div class="icon">👤</div>
-                    <h3>Personal Loan</h3>
-                    <p>Instant personal loans up to ₹25 Lakhs. Minimal documentation, fast disbursement.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🏠</div>
-                    <h3>Home Loan</h3>
-                    <p>Dream home? We make it possible with competitive rates and easy EMIs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🏭</div>
-                    <h3>MSME Support</h3>
-                    <p>Specialized solutions for micro, small &amp; medium enterprises. Government scheme guidance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🇮🇳</div>
+                <div class="category-card" id="catSchemes">
+                    <span class="cat-icon" aria-hidden="true">🇮🇳</span>
                     <h3>Government Schemes</h3>
-                    <p>Navigate and apply for all central &amp; state government business schemes with expert help.</p>
+                    <p>Navigate and apply for 50+ central and state schemes.</p>
+                    <a href="#contact" class="cat-link" id="catSchemesLink">Explore →</a>
                 </div>
-                <div class="service-card">
-                    <div class="icon">🚀</div>
-                    <h3>Startup Consultancy</h3>
-                    <p>End-to-end support for startups — from ideation to funding and scaling.</p>
+                <div class="category-card" id="catConsultancy">
+                    <span class="cat-icon" aria-hidden="true">📈</span>
+                    <h3>Consultancy</h3>
+                    <p>Startup, GST, ITR, trademark, and business registration.</p>
+                    <a href="#contact" class="cat-link" id="catConsultancyLink">Explore →</a>
                 </div>
-                <div class="service-card">
-                    <div class="icon">📊</div>
-                    <h3>GST &amp; ITR</h3>
-                    <p>Hassle-free GST registration, filing, and income tax return services.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">®️</div>
-                    <h3>Trademark &amp; Registration</h3>
-                    <p>Protect your brand. Business registration, trademark filing &amp; compliance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">💻</div>
-                    <h3>Digital Marketing</h3>
-                    <p>SEO, social media, content marketing — drive traffic and conversions.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">📱</div>
-                    <h3>Website &amp; App Development</h3>
-                    <p>Modern, responsive websites and mobile apps that convert visitors into customers.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🤖</div>
-                    <h3>AI Automation</h3>
-                    <p>Automate your business with AI-powered workflows, chatbots, and intelligent tools.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🎨</div>
-                    <h3>Branding</h3>
-                    <p>Create a memorable brand identity with our expert branding and design services.</p>
+                <div class="category-card" id="catDigital">
+                    <span class="cat-icon" aria-hidden="true">💻</span>
+                    <h3>Digital Services</h3>
+                    <p>Marketing, website, app, CRM, and AI automation.</p>
+                    <a href="#contact" class="cat-link" id="catDigitalLink">Explore →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== LOAN CTA ===== -->
-    <section class="section" id="loan-cta" aria-labelledby="loan-cta-title">
-        <div class="container">
-            <div class="cta-section">
-                <h2 id="loan-cta-title">💰 Need a Loan? We've Got You Covered</h2>
-                <p>Business, personal, home, or MSME loans — get the best rates and fastest approval.</p>
-                <a href="#contact" class="btn-primary" id="loanCtaBtn">Apply Now →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== GOVERNMENT SCHEME CTA ===== -->
-    <section class="section" id="govt-cta" aria-labelledby="govt-cta-title">
-        <div class="container">
-            <div class="cta-section" style="background: var(--gradient-2);">
-                <h2 id="govt-cta-title">🇮🇳 Unlock Government Schemes</h2>
-                <p>From MUDRA to PMEGP — we help you navigate and access every government benefit for your business.</p>
-                <a href="#contact" class="btn-primary" id="govtCtaBtn" style="background:var(--dark);color:var(--text-light);">Explore Schemes →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== AI ASSISTANT CTA ===== -->
-    <section class="section" id="ai-cta" aria-labelledby="ai-cta-title">
-        <div class="container">
-            <div class="cta-section" style="background: var(--gradient-3);">
-                <h2 id="ai-cta-title">🤖 Your AI Business Assistant</h2>
-                <p>Smile OS AI automates tasks, generates insights, and helps you make smarter decisions — 24/7.</p>
-                <a href="#contact" class="btn-primary" id="aiCtaBtn" style="background:var(--dark);color:var(--text-light);">Try AI Now →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BUSINESS GROWTH CTA ===== -->
-    <section class="section" id="growth-cta" aria-labelledby="growth-cta-title">
-        <div class="container">
-            <div class="cta-section" style="background: var(--gradient-1);">
-                <h2 id="growth-cta-title">📈 Scale Your Business with Smile OS</h2>
-                <p>Join 10,000+ businesses that have transformed their operations and revenue with our platform.</p>
-                <a href="#contact" class="btn-primary" id="growthCtaBtn" style="background:var(--dark);color:var(--text-light);">Start Scaling →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== MEMBERSHIP ===== -->
-    <section class="section" id="membership" aria-labelledby="membership-title">
+    <!-- ===== LOAN CATEGORIES ===== -->
+    <section id="loan-categories" class="loan-categories" aria-labelledby="loanCatTitle">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Membership Plans</span>
-                <h2 class="section-title" id="membership-title">Choose Your <span class="highlight">Plan</span></h2>
-                <p class="section-desc">Flexible plans for every business — from startups to enterprises.</p>
+                <span class="section-label">Loans</span>
+                <h2 id="loanCatTitle" class="section-title">Find Your <span class="highlight">Loan</span></h2>
+            </div>
+            <div class="loan-grid">
+                <a href="#" class="loan-item" id="loanBusiness">
+                    <span aria-hidden="true">🏢</span>
+                    <div>
+                        <h4>Business Loan</h4>
+                        <p>Up to ₹50 Lakhs</p>
+                    </div>
+                </a>
+                <a href="#" class="loan-item" id="loanPersonal">
+                    <span aria-hidden="true">👤</span>
+                    <div>
+                        <h4>Personal Loan</h4>
+                        <p>Up to ₹25 Lakhs</p>
+                    </div>
+                </a>
+                <a href="#" class="loan-item" id="loanHome">
+                    <span aria-hidden="true">🏠</span>
+                    <div>
+                        <h4>Home Loan</h4>
+                        <p>Up to ₹5 Crores</p>
+                    </div>
+                </a>
+                <a href="#" class="loan-item" id="loanMSME">
+                    <span aria-hidden="true">🏭</span>
+                    <div>
+                        <h4>MSME Loan</h4>
+                        <p>Up to ₹1 Crore</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BUSINESS GROWTH CATEGORIES ===== -->
+    <section id="growth-categories" class="growth-categories" aria-labelledby="growthCatTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Growth</span>
+                <h2 id="growthCatTitle" class="section-title">Scale Your <span class="highlight">Business</span></h2>
+            </div>
+            <div class="growth-grid">
+                <a href="#" class="growth-item" id="growthMarketing">
+                    <span aria-hidden="true">📱</span>
+                    <h4>Digital Marketing</h4>
+                </a>
+                <a href="#" class="growth-item" id="growthWeb">
+                    <span aria-hidden="true">💻</span>
+                    <h4>Website Development</h4>
+                </a>
+                <a href="#" class="growth-item" id="growthCRM">
+                    <span aria-hidden="true">📋</span>
+                    <h4>CRM Solutions</h4>
+                </a>
+                <a href="#" class="growth-item" id="growthAI">
+                    <span aria-hidden="true">🤖</span>
+                    <h4>AI Automation</h4>
+                </a>
+                <a href="#" class="growth-item" id="growthBranding">
+                    <span aria-hidden="true">🎨</span>
+                    <h4>Branding</h4>
+                </a>
+                <a href="#" class="growth-item" id="growthConsult">
+                    <span aria-hidden="true">📈</span>
+                    <h4>Business Consultancy</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AI ASSISTANT CARD ===== -->
+    <section id="ai-assistant" class="ai-assistant" aria-labelledby="aiTitle">
+        <div class="container">
+            <div class="ai-card">
+                <div class="ai-content">
+                    <span class="ai-badge" aria-hidden="true">🤖 AI Powered</span>
+                    <h2 id="aiTitle">Your 24/7 <span class="highlight">AI Business Assistant</span></h2>
+                    <p>Get instant answers, generate reports, automate tasks, and make data-driven decisions with Smile AI.</p>
+                    <a href="#" class="btn-primary ai-cta" id="aiCta">Try AI Assistant →</a>
+                </div>
+                <div class="ai-visual" aria-hidden="true">🤖</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED SERVICES ===== -->
+    <section id="featured-services" class="featured-services" aria-labelledby="featuredTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Featured</span>
+                <h2 id="featuredTitle" class="section-title">Most <span class="highlight">Popular</span> Services</h2>
+            </div>
+            <div class="featured-grid">
+                <article class="featured-card" id="featuredLoan">
+                    <span class="featured-badge" aria-hidden="true">🔥 Trending</span>
+                    <div class="featured-icon" aria-hidden="true">🏦</div>
+                    <h3>Business Loan</h3>
+                    <p>Quick approval, competitive rates, and flexible repayment options.</p>
+                    <a href="#contact" class="featured-link" id="featuredLoanLink">Apply Now →</a>
+                </article>
+                <article class="featured-card" id="featuredAI">
+                    <span class="featured-badge" aria-hidden="true">✨ New</span>
+                    <div class="featured-icon" aria-hidden="true">🤖</div>
+                    <h3>AI Automation</h3>
+                    <p>Automate workflows, generate content, and gain insights with our AI suite.</p>
+                    <a href="#contact" class="featured-link" id="featuredAILink">Learn More →</a>
+                </article>
+                <article class="featured-card" id="featuredGovt">
+                    <span class="featured-badge" aria-hidden="true">🇮🇳</span>
+                    <div class="featured-icon" aria-hidden="true">📋</div>
+                    <h3>Government Schemes</h3>
+                    <p>Expert guidance to access 50+ schemes for your business growth.</p>
+                    <a href="#contact" class="featured-link" id="featuredGovtLink">Explore →</a>
+                </article>
+                <article class="featured-card" id="featuredMarketing">
+                    <span class="featured-badge" aria-hidden="true">📈</span>
+                    <div class="featured-icon" aria-hidden="true">📱</div>
+                    <h3>Digital Marketing</h3>
+                    <p>SEO, social media, and content marketing to grow your online presence.</p>
+                    <a href="#contact" class="featured-link" id="featuredMarketingLink">Get Started →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section id="why-us" class="why-us" aria-labelledby="whyTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Smile OS</span>
+                <h2 id="whyTitle" class="section-title">Built for <span class="highlight">Indian Businesses</span></h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item" id="why1">
+                    <span class="why-icon" aria-hidden="true">🇮🇳</span>
+                    <h4>Pan India Presence</h4>
+                    <p>Headquartered in Gurugram, serving businesses across all 28 states of India.</p>
+                </div>
+                <div class="why-item" id="why2">
+                    <span class="why-icon" aria-hidden="true">🤖</span>
+                    <h4>AI-Powered Intelligence</h4>
+                    <p>Cutting-edge AI tools to automate, optimize, and scale your business operations.</p>
+                </div>
+                <div class="why-item" id="why3">
+                    <span class="why-icon" aria-hidden="true">🔒</span>
+                    <h4>Enterprise Security</h4>
+                    <p>Bank-grade encryption, secure servers, and compliance with Indian regulations.</p>
+                </div>
+                <div class="why-item" id="why4">
+                    <span class="why-icon" aria-hidden="true">📱</span>
+                    <h4>Mobile-First Platform</h4>
+                    <p>Access your business from anywhere — web, mobile, tablet, and PWA ready.</p>
+                </div>
+                <div class="why-item" id="why5">
+                    <span class="why-icon" aria-hidden="true">🤝</span>
+                    <h4>End-to-End Solutions</h4>
+                    <p>From loans and consultancy to digital marketing and AI — all in one platform.</p>
+                </div>
+                <div class="why-item" id="why6">
+                    <span class="why-icon" aria-hidden="true">⏰</span>
+                    <h4>24/7 Support</h4>
+                    <p>Dedicated support team available round the clock for all your queries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW WE WORK ===== -->
+    <section id="how-we-work" class="how-we-work" aria-labelledby="howTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How It Works</span>
+                <h2 id="howTitle" class="section-title">Simple <span class="highlight">Process</span></h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item" id="step1">
+                    <span class="step-number" aria-hidden="true">01</span>
+                    <div class="step-content">
+                        <h4>Sign Up</h4>
+                        <p>Create your free account in 2 minutes. No credit card required.</p>
+                    </div>
+                </div>
+                <div class="step-item" id="step2">
+                    <span class="step-number" aria-hidden="true">02</span>
+                    <div class="step-content">
+                        <h4>Choose Plan</h4>
+                        <p>Select a membership plan that fits your business needs and budget.</p>
+                    </div>
+                </div>
+                <div class="step-item" id="step3">
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <div class="step-content">
+                        <h4>Access Services</h4>
+                        <p>Explore loans, consultancy, AI tools, and digital services instantly.</p>
+                    </div>
+                </div>
+                <div class="step-item" id="step4">
+                    <span class="step-number" aria-hidden="true">04</span>
+                    <div class="step-content">
+                        <h4>Grow &amp; Scale</h4>
+                        <p>Use Smile OS insights to grow your business exponentially.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SUCCESS JOURNEY ===== -->
+    <section id="success-journey" class="success-journey" aria-labelledby="journeyTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Journey</span>
+                <h2 id="journeyTitle" class="section-title">Success <span class="highlight">Timeline</span></h2>
+            </div>
+            <div class="journey-timeline">
+                <div class="journey-item" id="journey2021">
+                    <span class="journey-year">2021</span>
+                    <div class="journey-content">
+                        <h4>Founded in Gurugram</h4>
+                        <p>Smile Financial Solution established with a vision to empower Indian businesses.</p>
+                    </div>
+                </div>
+                <div class="journey-item" id="journey2022">
+                    <span class="journey-year">2022</span>
+                    <div class="journey-content">
+                        <h4>100+ Agents Onboarded</h4>
+                        <p>Expanded our agent network across 10 states, serving 1000+ clients.</p>
+                    </div>
+                </div>
+                <div class="journey-item" id="journey2023">
+                    <span class="journey-year">2023</span>
+                    <div class="journey-content">
+                        <h4>Launched Smile OS</h4>
+                        <p>AI-powered platform launched with 20+ integrated business services.</p>
+                    </div>
+                </div>
+                <div class="journey-item" id="journey2024">
+                    <span class="journey-year">2024</span>
+                    <div class="journey-content">
+                        <h4>Pan India Expansion</h4>
+                        <p>500+ agents, 150+ franchise partners, and 10,000+ happy clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIVE STATISTICS ===== -->
+    <section id="statistics" class="statistics" aria-labelledby="statsTitle">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" id="statCard1">
+                    <span class="stat-number" data-count="10000">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-card" id="statCard2">
+                    <span class="stat-number" data-count="300">0</span>
+                    <span class="stat-label">Active Agents</span>
+                </div>
+                <div class="stat-card" id="statCard3">
+                    <span class="stat-number" data-count="150">0</span>
+                    <span class="stat-label">Franchise Partners</span>
+                </div>
+                <div class="stat-card" id="statCard4">
+                    <span class="stat-number" data-count="5000">0</span>
+                    <span class="stat-label">Loans Disbursed</span>
+                </div>
+                <div class="stat-card" id="statCard5">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Govt. Schemes</span>
+                </div>
+                <div class="stat-card" id="statCard6">
+                    <span class="stat-number" data-count="28">0</span>
+                    <span class="stat-label">States Covered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARTNER BANKS ===== -->
+    <section id="partners" class="partners" aria-labelledby="partnersTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Partners</span>
+                <h2 id="partnersTitle" class="section-title">Trusted <span class="highlight">Partners</span></h2>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-item" id="partnerHDFC">🏦 HDFC Bank</div>
+                <div class="partner-item" id="partnerICICI">🏦 ICICI Bank</div>
+                <div class="partner-item" id="partnerSBI">🏦 SBI</div>
+                <div class="partner-item" id="partnerAxis">🏦 Axis Bank</div>
+                <div class="partner-item" id="partnerYes">🏦 Yes Bank</div>
+                <div class="partner-item" id="partnerKotak">🏦 Kotak Mahindra</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NBFC PARTNERS ===== -->
+    <section id="nbfc-partners" class="nbfc-partners" aria-labelledby="nbfcTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">NBFC Partners</span>
+                <h2 id="nbfcTitle" class="section-title">Financial <span class="highlight">Partners</span></h2>
+            </div>
+            <div class="nbfc-grid">
+                <div class="nbfc-item" id="nbfc1">💰 Bajaj Finance</div>
+                <div class="nbfc-item" id="nbfc2">💰 Tata Capital</div>
+                <div class="nbfc-item" id="nbfc3">💰 L&amp;T Finance</div>
+                <div class="nbfc-item" id="nbfc4">💰 Muthoot Finance</div>
+                <div class="nbfc-item" id="nbfc5">💰 Piramal Finance</div>
+                <div class="nbfc-item" id="nbfc6">💰 Shriram Finance</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BECOME AGENT ===== -->
+    <section id="agent" class="agent" aria-labelledby="agentTitle">
+        <div class="container">
+            <div class="agent-card">
+                <div class="agent-content">
+                    <span class="agent-badge" aria-hidden="true">👔 Career</span>
+                    <h2 id="agentTitle">Become a <span class="highlight">Smile OS Agent</span></h2>
+                    <p>Earn commissions, build your network, and grow with India's fastest-growing business platform. Join 300+ active agents across India.</p>
+                    <ul class="agent-benefits">
+                        <li>💰 Attractive commission structure</li>
+                        <li>📱 Digital tools &amp; support</li>
+                        <li>📚 Free training &amp; certification</li>
+                        <li>🤝 Pan India network</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary agent-cta" id="agentCta">Apply as Agent →</a>
+                </div>
+                <div class="agent-visual" aria-hidden="true">👔</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FRANCHISE ===== -->
+    <section id="franchise" class="franchise" aria-labelledby="franchiseTitle">
+        <div class="container">
+            <div class="franchise-card">
+                <div class="franchise-content">
+                    <span class="franchise-badge" aria-hidden="true">🏢 Opportunity</span>
+                    <h2 id="franchiseTitle">Own a <span class="highlight">Smile OS Franchise</span></h2>
+                    <p>Join our growing franchise network and build a profitable business with our proven model, training, and support.</p>
+                    <ul class="franchise-benefits">
+                        <li>📈 Proven business model</li>
+                        <li>📚 Comprehensive training</li>
+                        <li>🤝 Pan India network</li>
+                        <li>🛠️ Full operational support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary franchise-cta" id="franchiseCta">Explore Franchise →</a>
+                </div>
+                <div class="franchise-visual" aria-hidden="true">🏢</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MEMBERSHIP PLANS ===== -->
+    <section id="membership" class="membership" aria-labelledby="membershipTitle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Plans</span>
+                <h2 id="membershipTitle" class="section-title">Choose Your <span class="highlight">Plan</span></h2>
             </div>
             <div class="membership-grid">
-                <div class="membership-card">
+                <div class="membership-card" id="planFree">
                     <h3>Free</h3>
-                    <div class="price">₹0 <small>/mo</small></div>
+                    <span class="price">₹0 <small>/mo</small></span>
                     <ul>
                         <li>Basic CRM Access</li>
                         <li>1 User</li>
-                        <li>Limited Support</li>
-                        <li>Community Access</li>
+                        <li>Community Support</li>
+                        <li>Limited Reports</li>
                     </ul>
-                    <a href="#contact" class="btn-primary" id="freePlanBtn">Get Started</a>
+                    <a href="#contact" class="btn-secondary plan-cta" id="planFreeCta">Get Started</a>
                 </div>
-                <div class="membership-card">
-                    <span class="badge">Most Popular</span>
+                <div class="membership-card popular" id="planBasic">
+                    <span class="plan-badge" aria-hidden="true">⭐ Popular</span>
                     <h3>Basic</h3>
-                    <div class="price">₹999 <small>/mo</small></div>
+                    <span class="price">₹999 <small>/mo</small></span>
                     <ul>
                         <li>Full CRM</li>
                         <li>5 Users</li>
@@ -1552,12 +720,11 @@
                         <li>Document Management</li>
                         <li>Basic Reports</li>
                     </ul>
-                    <a href="#contact" class="btn-primary" id="basicPlanBtn">Buy Basic</a>
+                    <a href="#contact" class="btn-primary plan-cta" id="planBasicCta">Buy Basic</a>
                 </div>
-                <div class="membership-card popular">
-                    <span class="badge">⭐ Best Value</span>
+                <div class="membership-card" id="planGold">
                     <h3>Gold</h3>
-                    <div class="price">₹1499 <small>/mo</small></div>
+                    <span class="price">₹1499 <small>/mo</small></span>
                     <ul>
                         <li>Advanced CRM</li>
                         <li>15 Users</li>
@@ -1566,11 +733,11 @@
                         <li>Advanced Reports</li>
                         <li>WhatsApp Integration</li>
                     </ul>
-                    <a href="#contact" class="btn-primary" id="goldPlanBtn">Buy Gold</a>
+                    <a href="#contact" class="btn-primary plan-cta" id="planGoldCta">Buy Gold</a>
                 </div>
-                <div class="membership-card">
+                <div class="membership-card" id="planPremium">
                     <h3>Premium</h3>
-                    <div class="price">₹3499 <small>/mo</small></div>
+                    <span class="price">₹3499 <small>/mo</small></span>
                     <ul>
                         <li>Enterprise CRM</li>
                         <li>Unlimited Users</li>
@@ -1579,640 +746,355 @@
                         <li>Custom Integrations</li>
                         <li>Dedicated Account Manager</li>
                     </ul>
-                    <a href="#contact" class="btn-primary" id="premiumPlanBtn">Buy Premium</a>
+                    <a href="#contact" class="btn-primary plan-cta" id="planPremiumCta">Buy Premium</a>
                 </div>
-                <div class="membership-card">
+                <div class="membership-card" id="planFranchise">
                     <h3>Franchise</h3>
-                    <div class="price">₹2299 <small>/mo</small></div>
+                    <span class="price">₹2299 <small>/mo</small></span>
                     <ul>
-                        <li>Complete Franchise Toolkit</li>
+                        <li>Complete Toolkit</li>
                         <li>50+ Users</li>
                         <li>White-label Options</li>
                         <li>Training Portal</li>
                         <li>Lead Management</li>
                         <li>Commission Tracking</li>
                     </ul>
-                    <a href="#contact" class="btn-primary" id="franchisePlanBtn">Become Franchise</a>
+                    <a href="#contact" class="btn-primary plan-cta" id="planFranchiseCta">Get Franchise</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BECOME AGENT CTA ===== -->
-    <section class="section" id="agent-cta" aria-labelledby="agent-cta-title">
-        <div class="container">
-            <div class="cta-section" style="background: var(--gradient-2);">
-                <h2 id="agent-cta-title">👔 Become a Smile OS Agent</h2>
-                <p>Earn commissions, build your network, and grow with India's fastest-growing business platform.</p>
-                <a href="#contact" class="btn-primary" id="agentCtaBtn" style="background:var(--dark);color:var(--text-light);">Apply as Agent →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== WHY CHOOSE US ===== -->
-    <section class="section" id="why" aria-labelledby="why-title">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Why Smile OS</span>
-                <h2 class="section-title" id="why-title">Built for <span class="highlight">Indian Businesses</span></h2>
-                <p class="section-desc">We understand the unique challenges of Indian businesses and provide solutions that work.</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="icon">🇮🇳</div>
-                    <h4>Pan India Presence</h4>
-                    <p>Headquartered in Gurugram, serving businesses across all states of India.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon">🤖</div>
-                    <h4>AI-Powered</h4>
-                    <p>Leverage cutting-edge AI to automate, optimize, and grow your business.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon">🔒</div>
-                    <h4>Enterprise Security</h4>
-                    <p>Bank-grade security, data encryption, and compliance with Indian regulations.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon">📱</div>
-                    <h4>Mobile First</h4>
-                    <p>Access your business from anywhere — web, mobile, tablet, and PWA.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon">🤝</div>
-                    <h4>End-to-End Solutions</h4>
-                    <p>From loans to digital marketing — everything you need in one platform.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon">⏰</div>
-                    <h4>24/7 Support</h4>
-                    <p>Dedicated support team available round the clock for all your queries.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== HOW IT WORKS ===== -->
-    <section class="section" id="how-it-works" aria-labelledby="how-title">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">How It Works</span>
-                <h2 class="section-title" id="how-title">Get Started in <span class="highlight">4 Simple Steps</span></h2>
-                <p class="section-desc">Your journey to business growth starts here.</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="number">1</div>
-                    <h4>Sign Up</h4>
-                    <p>Create your free account in minutes. No credit card required.</p>
-                </div>
-                <div class="step">
-                    <div class="number">2</div>
-                    <h4>Choose Your Plan</h4>
-                    <p>Select the membership that fits your business needs.</p>
-                </div>
-                <div class="step">
-                    <div class="number">3</div>
-                    <h4>Access Services</h4>
-                    <p>Explore loans, consultancy, AI tools, and digital services.</p>
-                </div>
-                <div class="step">
-                    <div class="number">4</div>
-                    <h4>Grow &amp; Scale</h4>
-                    <p>Use Smile OS insights to grow your business exponentially.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PARTNERS ===== -->
-    <section class="section" id="partners" aria-labelledby="partners-title">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Partners</span>
-                <h2 class="section-title" id="partners-title">Trusted by <span class="highlight">Industry Leaders</span></h2>
-                <p class="section-desc">We partner with the best to deliver exceptional value to our clients.</p>
-            </div>
-            <div class="partners-grid">
-                <div class="partner-item">🏦 HDFC Bank</div>
-                <div class="partner-item">🏦 ICICI Bank</div>
-                <div class="partner-item">🏦 SBI</div>
-                <div class="partner-item">💰 Paytm</div>
-                <div class="partner-item">🤖 OpenAI</div>
-                <div class="partner-item">📱 WhatsApp</div>
-                <div class="partner-item">🔵 Meta</div>
-                <div class="partner-item">🗺️ Google Maps</div>
             </div>
         </div>
     </section>
 
     <!-- ===== TESTIMONIALS ===== -->
-    <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+    <section id="testimonials" class="testimonials" aria-labelledby="testimonialsTitle">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Testimonials</span>
-                <h2 class="section-title" id="testimonials-title">What Our <span class="highlight">Clients Say</span></h2>
-                <p class="section-desc">Real stories from real businesses that grew with Smile OS.</p>
+                <h2 id="testimonialsTitle" class="section-title">What Our <span class="highlight">Clients Say</span></h2>
             </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
+                <article class="testimonial-card" id="testimonial1">
+                    <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
                     <blockquote>Smile OS transformed our business. We got a business loan in record time and their AI tools helped us double our revenue in 6 months.</blockquote>
-                    <div class="author">
-                        <div class="avatar">RK</div>
+                    <div class="testimonial-author">
+                        <span class="author-avatar" aria-hidden="true">RK</span>
                         <div>
-                            <div class="name">Rajesh Kumar</div>
-                            <div class="role">Founder, TechBharat</div>
+                            <span class="author-name">Rajesh Kumar</span>
+                            <span class="author-role">Founder, TechBharat</span>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
+                </article>
+                <article class="testimonial-card" id="testimonial2">
+                    <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
                     <blockquote>The government scheme guidance was a game-changer. We received funding we didn't even know existed. Smile OS is a must for every Indian business.</blockquote>
-                    <div class="author">
-                        <div class="avatar">PM</div>
+                    <div class="testimonial-author">
+                        <span class="author-avatar" aria-hidden="true">PM</span>
                         <div>
-                            <div class="name">Priya Mehra</div>
-                            <div class="role">CEO, EcoGreen Solutions</div>
+                            <span class="author-name">Priya Mehra</span>
+                            <span class="author-role">CEO, EcoGreen Solutions</span>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
+                </article>
+                <article class="testimonial-card" id="testimonial3">
+                    <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
                     <blockquote>As a franchise partner, Smile OS gave us all the tools we needed. The training portal and commission tracking made our operations seamless.</blockquote>
-                    <div class="author">
-                        <div class="avatar">AS</div>
+                    <div class="testimonial-author">
+                        <span class="author-avatar" aria-hidden="true">AS</span>
                         <div>
-                            <div class="name">Amit Singh</div>
-                            <div class="role">Franchise Partner, Smile OS</div>
+                            <span class="author-name">Amit Singh</span>
+                            <span class="author-role">Franchise Partner</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ===== FAQ ===== -->
-    <section class="section" id="faq" aria-labelledby="faq-title">
+    <section id="faq" class="faq" aria-labelledby="faqTitle">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">FAQ</span>
-                <h2 class="section-title" id="faq-title">Frequently Asked <span class="highlight">Questions</span></h2>
-                <p class="section-desc">Everything you need to know about Smile OS.</p>
+                <h2 id="faqTitle" class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
             </div>
             <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item" id="faq1">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer1">
                         <span>What is Smile Business OS?</span>
-                        <span class="icon">▼</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer1" role="region">
+                        <p>Smile Business OS is India's biggest AI-powered business growth platform offering end-to-end solutions including loans, consultancy, digital services, and AI automation for businesses of all sizes.</p>
                     </div>
-                    <div class="faq-answer">Smile Business OS is India's biggest AI-powered business growth platform offering end-to-end solutions including loans, consultancy, digital services, and AI automation for businesses of all sizes.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item" id="faq2">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer2">
                         <span>Who can use Smile OS?</span>
-                        <span class="icon">▼</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer2" role="region">
+                        <p>Anyone — from individuals seeking loans to businesses, startups, agents, franchise partners, and corporate teams. We have tailored solutions for every user type.</p>
                     </div>
-                    <div class="faq-answer">Anyone — from individuals seeking loans to businesses, startups, agents, franchise partners, and corporate teams. We have tailored solutions for every user type.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item" id="faq3">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer3">
                         <span>How does the AI Assistant work?</span>
-                        <span class="icon">▼</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer3" role="region">
+                        <p>Our AI Assistant uses OpenAI technology to automate tasks, generate insights, answer queries, and provide personalized recommendations to help you make smarter business decisions.</p>
                     </div>
-                    <div class="faq-answer">Our AI Assistant uses OpenAI technology to automate tasks, generate insights, answer queries, and provide personalized recommendations to help you make smarter business decisions.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item" id="faq4">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer4">
                         <span>What payment methods are accepted?</span>
-                        <span class="icon">▼</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer4" role="region">
+                        <p>We accept all major credit/debit cards, UPI, netbanking, and digital wallets. We also support EMI options for our premium plans.</p>
                     </div>
-                    <div class="faq-answer">We accept all major credit/debit cards, UPI, netbanking, and digital wallets. We also support EMI options for our premium plans.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item" id="faq5">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqAnswer5">
                         <span>Is my data secure?</span>
-                        <span class="icon">▼</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer5" role="region">
+                        <p>Absolutely. We use bank-grade encryption, secure servers, and comply with all Indian data protection regulations. Your data is safe with us.</p>
                     </div>
-                    <div class="faq-answer">Absolutely. We use bank-grade encryption, secure servers, and comply with all Indian data protection regulations. Your data is safe with us.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
+    <!-- ===== BLOGS ===== -->
+    <section id="blogs" class="blogs" aria-labelledby="blogsTitle">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Contact Us</span>
-                <h2 class="section-title" id="contact-title">Let's <span class="highlight">Get Started</span></h2>
-                <p class="section-desc">Have questions or ready to grow? Reach out to our team.</p>
+                <span class="section-label">Blogs</span>
+                <h2 id="blogsTitle" class="section-title">Latest <span class="highlight">Insights</span></h2>
             </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Smile Financial Solution</h3>
-                    <p>Head Office: Sector 56, Gurugram, Haryana, India</p>
-                    <div class="contact-detail">
-                        <span class="icon">📍</span>
-                        <span>Sector 56, Gurugram, Haryana 122001</span>
+            <div class="blogs-grid">
+                <article class="blog-card" id="blog1">
+                    <div class="blog-image" aria-hidden="true">📈</div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Finance</span>
+                        <h3>How to Get a Business Loan in 2024</h3>
+                        <p>Complete guide to business loan eligibility, documentation, and approval process.</p>
+                        <a href="#" class="blog-link" id="blogLink1">Read More →</a>
                     </div>
-                    <div class="contact-detail">
-                        <span class="icon">📞</span>
-                        <span>+91 98765 43210</span>
+                </article>
+                <article class="blog-card" id="blog2">
+                    <div class="blog-image" aria-hidden="true">🇮🇳</div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Government</span>
+                        <h3>Top 10 Government Schemes for MSMEs</h3>
+                        <p>Discover government schemes that can help your MSME grow with subsidies and support.</p>
+                        <a href="#" class="blog-link" id="blogLink2">Read More →</a>
                     </div>
-                    <div class="contact-detail">
-                        <span class="icon">✉️</span>
-                        <span>info@smilefinancialsolution.com</span>
+                </article>
+                <article class="blog-card" id="blog3">
+                    <div class="blog-image" aria-hidden="true">🤖</div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Technology</span>
+                        <h3>AI Automation for Small Businesses</h3>
+                        <p>How AI can automate your business operations and help you scale faster.</p>
+                        <a href="#" class="blog-link" id="blogLink3">Read More →</a>
                     </div>
-                    <div class="contact-detail">
-                        <span class="icon">🌐</span>
-                        <span>smilefinancialsolution.com</span>
-                    </div>
-                    <div style="margin-top:20px;">
-                        <p style="font-weight:600;margin-bottom:4px;">Established 2021</p>
-                        <p style="color:var(--text-muted);font-size:14px;">Pan India Business Consultancy</p>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
-                    <input type="text" id="contactName" placeholder="Your Full Name" required aria-required="true">
-                    <input type="email" id="contactEmail" placeholder="Email Address" required aria-required="true">
-                    <input type="tel" id="contactPhone" placeholder="Phone Number" required aria-required="true">
-                    <select id="contactService" style="width:100%;padding:14px 18px;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.05);background:var(--dark-card);color:var(--text-light);font-family:inherit;font-size:15px;margin-bottom:16px;">
-                        <option value="">Select a Service</option>
-                        <option value="business-loan">Business Loan</option>
-                        <option value="personal-loan">Personal Loan</option>
-                        <option value="home-loan">Home Loan</option>
-                        <option value="msme">MSME Support</option>
-                        <option value="government-schemes">Government Schemes</option>
-                        <option value="startup-consultancy">Startup Consultancy</option>
-                        <option value="gst-itr">GST &amp; ITR</option>
-                        <option value="trademark">Trademark &amp; Registration</option>
-                        <option value="digital-marketing">Digital Marketing</option>
-                        <option value="website-development">Website &amp; App Development</option>
-                        <option value="ai-automation">AI Automation</option>
-                        <option value="branding">Branding</option>
-                        <option value="membership">Membership Plan</option>
-                        <option value="franchise">Become Franchise</option>
-                        <option value="agent">Become Agent</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <textarea id="contactMessage" placeholder="Tell us about your business needs..." required aria-required="true"></textarea>
-                    <button type="submit" class="btn-primary" id="contactSubmitBtn" style="width:100%;justify-content:center;padding:16px;">Send Message →</button>
-                </form>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- ===== NEWSLETTER ===== -->
-    <section class="section" id="newsletter" aria-labelledby="newsletter-title">
+    <!-- ===== CONTACT CTA ===== -->
+    <section id="contact" class="contact" aria-labelledby="contactTitle">
         <div class="container">
-            <div class="newsletter-box">
-                <h3 id="newsletter-title">📬 Subscribe to Our Newsletter</h3>
-                <p>Get the latest business insights, government schemes, and growth tips delivered to your inbox.</p>
-                <form class="newsletter-form" id="newsletterForm" novalidate>
-                    <input type="email" id="newsletterEmail" placeholder="Enter your email" required aria-required="true">
-                    <button type="submit" class="btn-primary" id="newsletterBtn">Subscribe</button>
-                </form>
+            <div class="contact-card">
+                <div class="contact-header">
+                    <span class="section-label">Contact</span>
+                    <h2 id="contactTitle" class="section-title">Let's <span class="highlight">Grow Together</span></h2>
+                    <p>Have questions or ready to take your business to the next level? Reach out to our team.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <span class="contact-icon" aria-hidden="true">📍</span>
+                            <span>Sector 56, Gurugram, Haryana 122001</span>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-icon" aria-hidden="true">📞</span>
+                            <span>+91 98765 43210</span>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-icon" aria-hidden="true">✉️</span>
+                            <span>info@smilefinancialsolution.com</span>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-icon" aria-hidden="true">🌐</span>
+                            <span>smilefinancialsolution.com</span>
+                        </div>
+                        <div class="contact-hours">
+                            <h4>Business Hours</h4>
+                            <p>Mon-Fri: 9:00 AM - 8:00 PM</p>
+                            <p>Sat-Sun: 10:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="contactName">Full Name</label>
+                            <input type="text" id="contactName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactService">Service of Interest</label>
+                            <select id="contactService">
+                                <option value="">Select a service</option>
+                                <option value="business-loan">Business Loan</option>
+                                <option value="personal-loan">Personal Loan</option>
+                                <option value="home-loan">Home Loan</option>
+                                <option value="msme">MSME Support</option>
+                                <option value="government-schemes">Government Schemes</option>
+                                <option value="startup">Startup Consultancy</option>
+                                <option value="gst">GST &amp; ITR</option>
+                                <option value="trademark">Trademark &amp; Registration</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="web-development">Website Development</option>
+                                <option value="ai-automation">AI Automation</option>
+                                <option value="crm">CRM Development</option>
+                                <option value="branding">Branding</option>
+                                <option value="membership">Membership Plan</option>
+                                <option value="agent">Become Agent</option>
+                                <option value="franchise">Franchise</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message</label>
+                            <textarea id="contactMessage" rows="4" placeholder="Tell us about your business needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary contact-submit" id="contactSubmit">Send Message →</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer" role="contentinfo">
+    <footer id="footer" class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo" style="font-size:22px;">
-                        <span class="logo-icon">😊</span>
+                        <span class="logo-icon" aria-hidden="true">😊</span>
                         <span>Smile<span>OS</span></span>
                     </div>
                     <p>India's Biggest AI-Powered Business Growth Platform. Empowering businesses with end-to-end solutions since 2021.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="LinkedIn">🔗</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Company</h4>
-                    <a href="#home">Home</a>
+                    <a href="#hero">Home</a>
                     <a href="#services">Services</a>
                     <a href="#membership">Membership</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <a href="#services">Loans</a>
-                    <a href="#services">Consultancy</a>
-                    <a href="#services">Digital Marketing</a>
-                    <a href="#services">AI Automation</a>
+                    <a href="#loan-categories">Loans</a>
+                    <a href="#growth-categories">Consultancy</a>
+                    <a href="#growth-categories">Digital Marketing</a>
+                    <a href="#ai-assistant">AI Automation</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Support</h4>
+                    <h4>Resources</h4>
                     <a href="#faq">FAQ</a>
-                    <a href="#contact">Help Center</a>
+                    <a href="#blogs">Blogs</a>
+                    <a href="#contact">Support</a>
                     <a href="#contact">Privacy Policy</a>
-                    <a href="#contact">Terms of Service</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>© 2026 Smile Financial Solution. All rights reserved.</span>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Instagram">📸</a>
-                    <a href="#" aria-label="LinkedIn">🔗</a>
-                    <a href="#" aria-label="YouTube">▶️</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                </div>
+                <span>Established 2021 | Pan India Presence</span>
             </div>
         </div>
     </footer>
 
+    <!-- ===== BOTTOM NAVIGATION ===== -->
+    <nav id="bottom-navigation" class="bottom-nav" role="navigation" aria-label="Bottom navigation">
+        <div class="bottom-nav-inner">
+            <a href="#hero" class="bottom-nav-item active" id="navHome" aria-label="Home">
+                <span class="nav-icon" aria-hidden="true">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <button class="bottom-nav-item" id="navExplore" aria-label="Explore services">
+                <span class="nav-icon" aria-hidden="true">🔍</span>
+                <span class="nav-label">Explore</span>
+            </button>
+            <button class="bottom-nav-item" id="navAI" aria-label="AI Assistant">
+                <span class="nav-icon" aria-hidden="true">🤖</span>
+                <span class="nav-label">AI</span>
+            </button>
+            <button class="bottom-nav-item" id="navServices" aria-label="Services">
+                <span class="nav-icon" aria-hidden="true">📋</span>
+                <span class="nav-label">Services</span>
+            </button>
+            <button class="bottom-nav-item" id="navAccount" aria-label="Account">
+                <span class="nav-icon" aria-hidden="true">👤</span>
+                <span class="nav-label">Account</span>
+            </button>
+        </div>
+    </nav>
+
     <!-- ===== FLOATING BUTTONS ===== -->
-    <a href="https://wa.me/919876543210" class="floating-btn floating-whatsapp" id="whatsappBtn" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">💬</a>
-    <button class="floating-btn floating-ai" id="aiChatBtn" aria-label="Open AI Assistant" title="AI Assistant">🤖</button>
-    <button class="floating-btn back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <a href="https://wa.me/919876543210" class="floating-btn floating-whatsapp" id="whatsappBtn" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
+        <span aria-hidden="true">💬</span>
+    </a>
+    <button class="floating-btn floating-ai" id="aiChatBtn" aria-label="Open AI Assistant">
+        <span aria-hidden="true">🤖</span>
+    </button>
+    <button class="floating-btn floating-back" id="backToTop" aria-label="Back to top">
+        <span aria-hidden="true">↑</span>
+    </button>
 
     <!-- ===== AI CHAT BUBBLE ===== -->
     <div class="ai-chat-bubble" id="aiChatBubble" role="dialog" aria-label="AI Assistant Chat">
-        <div class="header">
+        <div class="ai-chat-header">
             <span>🤖 Smile AI Assistant</span>
-            <span class="close" id="aiChatClose" role="button" tabindex="0" aria-label="Close chat">✕</span>
+            <button class="ai-chat-close" id="aiChatClose" aria-label="Close chat">✕</button>
         </div>
-        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Hi! I'm Smile AI. How can I help you today?</p>
-        <input type="text" id="aiChatInput" placeholder="Ask me anything..." aria-label="Chat input">
-        <button class="send" id="aiChatSend">Send</button>
+        <div class="ai-chat-body">
+            <p class="ai-chat-message">Hi! I'm Smile AI. How can I help you today?</p>
+        </div>
+        <div class="ai-chat-footer">
+            <input type="text" id="aiChatInput" placeholder="Ask me anything..." aria-label="Chat input">
+            <button class="ai-chat-send" id="aiChatSend" aria-label="Send message">Send</button>
+        </div>
     </div>
 
     <!-- ===== COOKIE CONSENT ===== -->
     <div class="cookie-consent" id="cookieConsent" role="alert">
         <p>🍪 We use cookies to improve your experience. By using our site, you accept our cookie policy.</p>
-        <button id="cookieAccept">Accept</button>
-        <button class="decline" id="cookieDecline">Decline</button>
+        <div class="cookie-actions">
+            <button class="cookie-accept" id="cookieAccept">Accept</button>
+            <button class="cookie-decline" id="cookieDecline">Decline</button>
+        </div>
     </div>
 
-    <!-- ============================================================ -->
     <!-- ===== JAVASCRIPT ===== -->
-    <!-- ============================================================ -->
-    <script>
-        (function() {
-            'use strict';
+    <script src="assets/js/app.js"></script>
 
-            // ===== LOADING SCREEN =====
-            window.addEventListener('load', function() {
-                const loader = document.getElementById('loader');
-                setTimeout(function() {
-                    loader.classList.add('hidden');
-                }, 600);
-            });
-
-            // ===== THEME TOGGLE =====
-            const themeToggle = document.getElementById('themeToggle');
-            let darkMode = true;
-
-            function toggleTheme() {
-                darkMode = !darkMode;
-                document.body.classList.toggle('light-mode', !darkMode);
-                themeToggle.textContent = darkMode ? '🌙' : '☀️';
-                localStorage.setItem('theme', darkMode ? 'dark' : 'light');
-            }
-
-            // Load saved theme
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                darkMode = false;
-                document.body.classList.add('light-mode');
-                themeToggle.textContent = '☀️';
-            }
-
-            themeToggle.addEventListener('click', toggleTheme);
-
-            // ===== STICKY HEADER =====
-            const header = document.getElementById('header');
-            let lastScroll = 0;
-
-            window.addEventListener('scroll', function() {
-                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                if (currentScroll > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                lastScroll = currentScroll;
-
-                // Back to top visibility
-                const backBtn = document.getElementById('backToTop');
-                if (currentScroll > 500) {
-                    backBtn.classList.add('visible');
-                } else {
-                    backBtn.classList.remove('visible');
-                }
-            });
-
-            // ===== MOBILE NAV =====
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
-
-            navToggle.addEventListener('click', function() {
-                const isOpen = navMenu.classList.toggle('open');
-                navToggle.setAttribute('aria-expanded', isOpen);
-                navToggle.textContent = isOpen ? '✕' : '☰';
-            });
-
-            // Close nav on link click (mobile)
-            navMenu.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('open');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                    navToggle.textContent = '☰';
-                });
-            });
-
-            // ===== ANIMATED COUNTERS =====
-            const counters = document.querySelectorAll('.number[data-count]');
-
-            function animateCounters() {
-                counters.forEach(function(counter) {
-                    const target = parseInt(counter.getAttribute('data-count'));
-                    const duration = 2000;
-                    const step = Math.max(1, Math.floor(target / 60));
-                    let current = 0;
-                    const increment = function() {
-                        current += step;
-                        if (current >= target) {
-                            counter.textContent = target + '+';
-                            return;
-                        }
-                        counter.textContent = current;
-                        requestAnimationFrame(increment);
-                    };
-                    increment();
-                });
-            }
-
-            // Intersection Observer for counters
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            animateCounters();
-                            observer.disconnect();
-                        }
-                    });
-                }, { threshold: 0.3 });
-                const statsContainer = document.querySelector('.hero-stats');
-                if (statsContainer) {
-                    observer.observe(statsContainer);
-                }
-            } else {
-                // Fallback: animate after load
-                setTimeout(animateCounters, 1000);
-            }
-
-            // ===== FAQ ACCORDION =====
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(function(item) {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-
-                question.addEventListener('click', function() {
-                    const isOpen = answer.classList.toggle('open');
-                    question.classList.toggle('active', isOpen);
-                    question.setAttribute('aria-expanded', isOpen);
-                });
-
-                question.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        question.click();
-                    }
-                });
-            });
-
-            // ===== BACK TO TOP =====
-            document.getElementById('backToTop').addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // ===== AI CHAT BUBBLE =====
-            const aiBtn = document.getElementById('aiChatBtn');
-            const aiBubble = document.getElementById('aiChatBubble');
-            const aiClose = document.getElementById('aiChatClose');
-            const aiInput = document.getElementById('aiChatInput');
-            const aiSend = document.getElementById('aiChatSend');
-
-            aiBtn.addEventListener('click', function() {
-                aiBubble.classList.toggle('open');
-            });
-
-            aiClose.addEventListener('click', function() {
-                aiBubble.classList.remove('open');
-            });
-
-            function sendAIMessage() {
-                const msg = aiInput.value.trim();
-                if (msg) {
-                    alert('🤖 Smile AI: Thanks for your message! Our AI team will get back to you shortly.');
-                    aiInput.value = '';
-                    aiBubble.classList.remove('open');
-                }
-            }
-
-            aiSend.addEventListener('click', sendAIMessage);
-            aiInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') sendAIMessage();
-            });
-
-            // ===== COOKIE CONSENT =====
-            const cookieConsent = document.getElementById('cookieConsent');
-
-            function setCookieConsent(accepted) {
-                localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined');
-                cookieConsent.style.display = 'none';
-            }
-
-            const cookieStatus = localStorage.getItem('cookieConsent');
-            if (cookieStatus) {
-                cookieConsent.style.display = 'none';
-            }
-
-            document.getElementById('cookieAccept').addEventListener('click', function() {
-                setCookieConsent(true);
-            });
-            document.getElementById('cookieDecline').addEventListener('click', function() {
-                setCookieConsent(false);
-            });
-
-            // ===== CONTACT FORM =====
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = document.getElementById('contactName').value.trim();
-                const email = document.getElementById('contactEmail').value.trim();
-                const phone = document.getElementById('contactPhone').value.trim();
-                const message = document.getElementById('contactMessage').value.trim();
-
-                if (name && email && phone && message) {
-                    alert('✅ Thank you, ' + name +
-                        '! Our team will contact you within 24 hours. Welcome to Smile OS!');
-                    this.reset();
-                } else {
-                    alert('⚠️ Please fill in all required fields.');
-                }
-            });
-
-            // ===== NEWSLETTER FORM =====
-            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = document.getElementById('newsletterEmail').value.trim();
-                if (email) {
-                    alert('📬 Thank you for subscribing to Smile OS newsletter!');
-                    this.reset();
-                } else {
-                    alert('⚠️ Please enter a valid email address.');
-                }
-            });
-
-            // ===== SMOOTH SCROLL FOR NAV LINKS =====
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        e.preventDefault();
-                        const headerOffset = 80;
-                        const targetPosition = target.getBoundingClientRect().top +
-                            window.pageYOffset - headerOffset;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                    }
-                });
-            });
-
-            // ===== PWA: Register Service Worker =====
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js')
-                        .then(function(reg) {
-                            console.log('✅ Service Worker registered');
-                        })
-                        .catch(function(err) {
-                            console.log('⚠️ Service Worker registration failed:', err);
-                        });
-                });
-            }
-
-            // ===== KEYBOARD ACCESSIBILITY: Close AI chat with Escape =====
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    if (aiBubble.classList.contains('open')) {
-                        aiBubble.classList.remove('open');
-                    }
-                    if (navMenu.classList.contains('open')) {
-                        navMenu.classList.remove('open');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                        navToggle.textContent = '☰';
-                    }
-                }
-            });
-
-            console.log('😊 Smile Business OS loaded successfully!');
-        })();
-    </script>
 </body>
 </html>
